@@ -206,10 +206,10 @@
     <div class="avatar">S</div>
     <div class="hero-text">
       <h1 data-i18n="hero_name">Hi, I'm Sylvester</h1>
-      <div class="role" data-i18n="hero_role">Mechanical Engineer / Design Engineer</div>
+      <div class="role" data-i18n="hero_role">Mechatronics Engineer · Robot System Design</div>
       <p data-i18n="hero_desc">
-        Passionate about turning complex problems into elegant mechanical solutions.
-        Experienced in product design, structural analysis, and manufacturing process optimization.
+        I design complete robot systems that blend mechanical structure, embedded electronics,
+        and control software — turning ideas into machines that move, sense, and think.
       </p>
       <div class="hero-buttons">
         <a href="#projects" class="btn btn-primary" data-i18n="hero_btn_projects">View Projects</a>
@@ -227,14 +227,15 @@
     <div class="about-grid">
       <div class="about-text">
         <p data-i18n="about_p1">
-          I am a mechanical engineer with a strong background in mechanical design,
-          finite element analysis, and prototyping. I enjoy working across the entire
-          product development lifecycle — from concept sketches to production-ready drawings.
+          I am a mechatronics engineer focused on robot system design. I work across
+          the full stack — mechanical structure, actuators, embedded electronics, and
+          control software — to build integrated, reliable robotic systems.
         </p>
         <p data-i18n="about_p2">
-          I believe great engineering comes from a balance of creativity, rigorous analysis,
-          and practical manufacturing knowledge. I'm always eager to learn new tools and
-          push designs to be more efficient, reliable, and cost-effective.
+          Rather than designing parts in isolation, I enjoy bringing mechanics, electronics,
+          and software together into a coherent system. From concept and simulation to
+          prototyping and tuning, I aim for robots that are robust, efficient, and ready
+          for real-world tasks.
         </p>
       </div>
       <div>
@@ -257,13 +258,13 @@
     <p class="section-subtitle" data-i18n="skills_subtitle">Core competencies and software I use daily</p>
     <div class="skills-wrap">
       <div class="skill-card">
-        <h3 data-i18n="skill_design_title">CAD &amp; Design</h3>
+        <h3 data-i18n="skill_design_title">Mechanical &amp; CAD Design</h3>
         <div class="skill-tags">
           <span class="tag">SolidWorks</span>
           <span class="tag">AutoCAD</span>
           <span class="tag">Inventor</span>
           <span class="tag">Creo</span>
-          <span class="tag">CATIA</span>
+          <span class="tag" data-i18n="skill_mech">Mechanism Design</span>
         </div>
       </div>
       <div class="skill-card">
@@ -271,18 +272,28 @@
         <div class="skill-tags">
           <span class="tag">ANSYS</span>
           <span class="tag">Abaqus</span>
-          <span class="tag">Fluent</span>
           <span class="tag">MATLAB</span>
           <span class="tag">FEA</span>
+          <span class="tag" data-i18n="skill_kin">Kinematics</span>
         </div>
       </div>
       <div class="skill-card">
-        <h3 data-i18n="skill_manufacturing_title">Manufacturing</h3>
+        <h3 data-i18n="skill_embedded_title">Embedded &amp; Control</h3>
         <div class="skill-tags">
-          <span class="tag" data-i18n="skill_mfg_cnc">CNC Machining</span>
+          <span class="tag">Arduino</span>
+          <span class="tag">Raspberry Pi</span>
+          <span class="tag">STM32</span>
+          <span class="tag">PID Control</span>
+          <span class="tag" data-i18n="skill_motor">Motor &amp; Servo</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3 data-i18n="skill_robotics_title">Robotics &amp; Systems</h3>
+        <div class="skill-tags">
+          <span class="tag">ROS</span>
           <span class="tag" data-i18n="skill_mfg_3d">3D Printing</span>
-          <span class="tag" data-i18n="skill_mfg_sheet">Sheet Metal</span>
-          <span class="tag" data-i18n="skill_mfg_injection">Injection Molding</span>
+          <span class="tag" data-i18n="skill_mfg_cnc">CNC Machining</span>
+          <span class="tag" data-i18n="skill_integrate">System Integration</span>
           <span class="tag" data-i18n="skill_mfg_dfa">DFM / DFA</span>
         </div>
       </div>
@@ -336,39 +347,42 @@
     <p class="section-subtitle" data-i18n="proj_subtitle">Selected work I'm proud of</p>
     <div class="projects-grid">
       <div class="project-card">
-        <div class="proj-img">⚙️</div>
+        <div class="proj-img">🤖</div>
         <div class="proj-body">
-          <h3 data-i18n="proj1_title">Precision Automation Equipment</h3>
+          <h3 data-i18n="proj1_title">FRC Competition Robot</h3>
           <p data-i18n="proj1_desc">
-            Led the mechanical design of a high-precision automated assembly line, improving
-            production efficiency by 35% while reducing defect rates.
+            Led the end-to-end system design of the FRC competition robot, integrating mechanical
+            structure, drivetrain, actuators, and control systems to meet game objectives reliably.
           </p>
           <span class="tag">SolidWorks</span>
-          <span class="tag">ANSYS</span>
+          <span class="tag">ROS</span>
+          <span class="tag" data-i18n="skill_motor">Motor &amp; Servo</span>
         </div>
       </div>
       <div class="project-card">
-        <div class="proj-img">🔧</div>
+        <div class="proj-img">⚙️</div>
         <div class="proj-body">
-          <h3 data-i18n="proj2_title">Lightweight Structural Component</h3>
+          <h3 data-i18n="proj2_title">Autonomous Mobile Robot</h3>
           <p data-i18n="proj2_desc">
-            Optimized a load-bearing structural part using topology optimization, reducing
-            weight by 22% while maintaining required strength and stiffness.
+            Designed a compact autonomous mobile robot with mecanum drive, integrated motor control,
+            sensor feedback, and embedded control logic for stable navigation.
           </p>
-          <span class="tag">FEA</span>
+          <span class="tag">STM32</span>
+          <span class="tag">PID Control</span>
           <span class="tag" data-i18n="skill_mfg_3d">3D Printing</span>
         </div>
       </div>
       <div class="project-card">
         <div class="proj-img">🛠️</div>
         <div class="proj-body">
-          <h3 data-i18n="proj3_title">Custom Testing Fixture</h3>
+          <h3 data-i18n="proj3_title">Robotic Manipulator Prototype</h3>
           <p data-i18n="proj3_desc">
-            Designed and fabricated a modular testing fixture for product validation,
-            enabling rapid setup and repeatable measurement across multiple variants.
+            Developed a multi-DOF manipulator prototype covering mechanism design, servo control,
+            and kinematics calibration, achieving precise end-effector positioning.
           </p>
+          <span class="tag">MATLAB</span>
+          <span class="tag" data-i18n="skill_kin">Kinematics</span>
           <span class="tag" data-i18n="skill_mfg_cnc">CNC</span>
-          <span class="tag" data-i18n="skill_mfg_sheet">Sheet Metal</span>
         </div>
       </div>
     </div>
@@ -415,37 +429,37 @@
       nav_about: "About", nav_skills: "Skills", nav_experience: "Experience",
       nav_projects: "Projects", nav_contact: "Contact",
       hero_name: "Hi, I'm Sylvester",
-      hero_role: "Mechanical Engineer / Design Engineer",
-      hero_desc: "Passionate about turning complex problems into elegant mechanical solutions. Experienced in product design, structural analysis, and manufacturing process optimization.",
+      hero_role: "Mechatronics Engineer · Robot System Design",
+      hero_desc: "I design complete robot systems that blend mechanical structure, embedded electronics, and control software — turning ideas into machines that move, sense, and think.",
       hero_btn_projects: "View Projects", hero_btn_contact: "Get in Touch",
       about_title: "About Me", about_subtitle: "A brief introduction",
-      about_p1: "I am a mechanical engineer with a strong background in mechanical design, finite element analysis, and prototyping. I enjoy working across the entire product development lifecycle — from concept sketches to production-ready drawings.",
-      about_p2: "I believe great engineering comes from a balance of creativity, rigorous analysis, and practical manufacturing knowledge. I'm always eager to learn new tools and push designs to be more efficient, reliable, and cost-effective.",
-      info_name: "Name", info_role: "Role", info_role_v: "Mechanical Engineer",
+      about_p1: "I am a mechatronics engineer focused on robot system design. I work across the full stack — mechanical structure, actuators, embedded electronics, and control software — to build integrated, reliable robotic systems.",
+      about_p2: "Rather than designing parts in isolation, I enjoy bringing mechanics, electronics, and software together into a coherent system. From concept and simulation to prototyping and tuning, I aim for robots that are robust, efficient, and ready for real-world tasks.",
+      info_name: "Name", info_role: "Role", info_role_v: "Mechatronics Engineer",
       info_loc: "Location", info_email: "Email", info_lang: "Languages", info_lang_v: "English, Chinese",
-      skills_title: "Skills & Tools", skills_subtitle: "Core competencies and software I use daily",
-      skill_design_title: "CAD & Design",
+      skills_title: "Skills & Tools", skills_subtitle: "Core competencies across mechanics, electronics and control",
+      skill_design_title: "Mechanical & CAD Design",
       skill_analysis_title: "Analysis & Simulation",
-      skill_manufacturing_title: "Manufacturing",
-      skill_mfg_cnc: "CNC Machining", skill_mfg_3d: "3D Printing", skill_mfg_sheet: "Sheet Metal",
-      skill_mfg_injection: "Injection Molding", skill_mfg_dfa: "DFM / DFA",
+      skill_embedded_title: "Embedded & Control",
+      skill_robotics_title: "Robotics & Systems",
+      skill_mech: "Mechanism Design", skill_kin: "Kinematics",
+      skill_motor: "Motor & Servo", skill_integrate: "System Integration",
+      skill_mfg_cnc: "CNC Machining", skill_mfg_3d: "3D Printing", skill_mfg_dfa: "DFM / DFA",
       skill_soft_title: "Soft Skills",
       skill_soft_proj: "Project Management", skill_soft_team: "Team Collaboration",
       skill_soft_comm: "Bilingual Communication", skill_soft_solve: "Problem Solving",
-      exp_title: "Experience", exp_subtitle: "My professional journey", exp_present: "Present",
-      exp1_title: "Senior Mechanical Engineer", exp1_org: "Engineering Technology Co., Ltd.",
-      exp1_desc: "Lead mechanical design for precision equipment products, responsible for structural optimization, FEA validation, and cross-functional coordination with manufacturing teams.",
-      exp2_title: "Mechanical Design Engineer", exp2_org: "Industrial Machinery Group",
-      exp2_desc: "Designed mechanical assemblies and components, produced detailed engineering drawings, and supported prototype testing and iteration.",
-      exp3_title: "B.Eng. in Mechanical Engineering", exp3_org: "University of Technology",
-      exp3_desc: "Focused on mechanical design, thermodynamics, materials science, and control engineering. Graduated with honors.",
-      proj_title: "Featured Projects", proj_subtitle: "Selected work I'm proud of",
-      proj1_title: "Precision Automation Equipment",
-      proj1_desc: "Led the mechanical design of a high-precision automated assembly line, improving production efficiency by 35% while reducing defect rates.",
-      proj2_title: "Lightweight Structural Component",
-      proj2_desc: "Optimized a load-bearing structural part using topology optimization, reducing weight by 22% while maintaining required strength and stiffness.",
-      proj3_title: "Custom Testing Fixture",
-      proj3_desc: "Designed and fabricated a modular testing fixture for product validation, enabling rapid setup and repeatable measurement across multiple variants.",
+      exp_title: "Experience", exp_subtitle: "My journey in robotics", exp_present: "Present",
+      exp1_title: "Engineering Lead & Co-Captain", exp1_org: "FRC Team 6907",
+      exp1_desc: "Led the engineering sub-team and served as Co-Captain, overseeing robot system design — from mechanism and drivetrain to actuator integration and control — while coordinating across strategy, programming, and outreach teams.",
+      exp2_title: "Team Member", exp2_org: "FRC Team 6907",
+      exp2_desc: "Joined as a team member, participated in robot mechanical design, electronics wiring, prototyping and competition, and gained hands-on experience in integrated robotic systems and team collaboration.",
+      proj_title: "Featured Projects", proj_subtitle: "Selected robot system designs",
+      proj1_title: "FRC Competition Robot",
+      proj1_desc: "Led the end-to-end system design of the FRC competition robot, integrating mechanical structure, drivetrain, actuators, and control systems to meet game objectives reliably.",
+      proj2_title: "Autonomous Mobile Robot",
+      proj2_desc: "Designed a compact autonomous mobile robot with mecanum drive, integrated motor control, sensor feedback, and embedded control logic for stable navigation.",
+      proj3_title: "Robotic Manipulator Prototype",
+      proj3_desc: "Developed a multi-DOF manipulator prototype covering mechanism design, servo control, and kinematics calibration, achieving precise end-effector positioning.",
       contact_title: "Get in Touch", contact_subtitle: "Feel free to reach out for collaboration or opportunities",
       contact_email: "Email", contact_linkedin: "LinkedIn", contact_github: "GitHub", contact_loc: "Location",
       footer_rights: "All rights reserved."
@@ -454,35 +468,37 @@
       nav_about: "关于", nav_skills: "技能", nav_experience: "经历",
       nav_projects: "项目", nav_contact: "联系",
       hero_name: "你好，我是 Sylvester",
-      hero_role: "机械工程师 / 设计工程师",
-      hero_desc: "热衷于将复杂问题转化为优雅的机械解决方案。在产品设计、结构分析以及制造工艺优化方面拥有丰富经验。",
+      hero_role: "机械电子工程师 · 机器人系统设计",
+      hero_desc: "我设计完整的机器人系统，融合机械结构、嵌入式电子与控制软件——把想法变成能够运动、感知与思考的机器。",
       hero_btn_projects: "查看项目", hero_btn_contact: "联系我",
       about_title: "关于我", about_subtitle: "个人简介",
-      about_p1: "我是一名机械工程师，在机械设计、有限元分析和样机制作方面具备扎实的基础。我乐于参与产品开发的全生命周期——从概念草图到可投产的工程图纸。",
-      about_p2: "我相信优秀的工程源自创造力、严谨分析与实用制造知识的平衡。我始终乐于学习新工具，并致力于让设计更高效、更可靠、更具成本优势。",
-      info_name: "姓名", info_role: "职位", info_role_v: "机械工程师",
+      about_p1: "我是一名机械电子工程师，主攻机器人系统设计。我跨越机械结构、执行器、嵌入式电子与控制软件的全链路，打造集成度高、稳定可靠的机器人系统。",
+      about_p2: "我不满足于孤立地设计零件，更享受把机械、电子与软件融合成一个完整系统。从概念与仿真到样机制作与调试，我致力于做出坚固、高效、能胜任真实任务的机器人。",
+      info_name: "姓名", info_role: "职位", info_role_v: "机械电子工程师",
       info_loc: "所在地", info_email: "邮箱", info_lang: "语言", info_lang_v: "英语、中文",
-      skills_title: "技能与工具", skills_subtitle: "核心能力与日常使用的软件",
-      skill_design_title: "CAD 与设计",
+      skills_title: "技能与工具", skills_subtitle: "横跨机械、电子与控制的核心能力",
+      skill_design_title: "机械与 CAD 设计",
       skill_analysis_title: "分析与仿真",
-      skill_manufacturing_title: "制造工艺",
-      skill_mfg_cnc: "CNC 加工", skill_mfg_3d: "3D 打印", skill_mfg_sheet: "钣金",
-      skill_mfg_injection: "注塑成型", skill_mfg_dfa: "DFM / DFA",
+      skill_embedded_title: "嵌入式与控制",
+      skill_robotics_title: "机器人与系统",
+      skill_mech: "机构设计", skill_kin: "运动学",
+      skill_motor: "电机与舵机", skill_integrate: "系统集成",
+      skill_mfg_cnc: "CNC 加工", skill_mfg_3d: "3D 打印", skill_mfg_dfa: "DFM / DFA",
       skill_soft_title: "软技能",
       skill_soft_proj: "项目管理", skill_soft_team: "团队协作",
       skill_soft_comm: "双语沟通", skill_soft_solve: "问题解决",
-      exp_title: "工作经历", exp_subtitle: "我的职业历程", exp_present: "至今",
+      exp_title: "经历", exp_subtitle: "我的机器人之路", exp_present: "至今",
       exp1_title: "工程组负责人 / 联合队长（Co-Captain）", exp1_org: "FRC 6907 战队",
-      exp1_desc: "担任工程组负责人及联合队长，统筹机器人机械设计、样机制作与搭建，并协调策略、编程、宣传等各组工作。",
+      exp1_desc: "担任工程组负责人及联合队长，统筹机器人系统设计——从机构、传动到执行器集成与控制，并协调策略、编程、宣传等各组工作。",
       exp2_title: "学员", exp2_org: "FRC 6907 战队",
-      exp2_desc: "作为战队成员，参与机器人的设计、加工制作与比赛，积累了机械系统与团队协作的实战经验。",
-      proj_title: "精选项目", proj_subtitle: "我引以为傲的部分工作",
-      proj1_title: "精密自动化设备",
-      proj1_desc: "主导高精度自动化装配线的机械设计，生产效率提升 35%，同时降低了不良率。",
-      proj2_title: "轻量化结构件",
-      proj2_desc: "采用拓扑优化方法对承力结构件进行优化，在保持强度与刚度的前提下减重 22%。",
-      proj3_title: "定制化测试夹具",
-      proj3_desc: "设计并制作模块化测试夹具，用于产品验证，支持多型号快速装夹与可重复测量。",
+      exp2_desc: "作为战队成员，参与机器人机械设计、电子布线、样机制作与比赛，积累了集成化机器人系统与团队协作的实战经验。",
+      proj_title: "精选项目", proj_subtitle: "部分机器人系统设计作品",
+      proj1_title: "FRC 竞赛机器人",
+      proj1_desc: "主导 FRC 竞赛机器人的端到端系统设计，整合机械结构、底盘传动、执行器与控制系统，可靠地完成比赛任务。",
+      proj2_title: "自主移动机器人",
+      proj2_desc: "设计了一款紧凑型自主移动机器人，采用麦克纳姆轮底盘，集成电机控制、传感器反馈与嵌入式控制逻辑，实现稳定导航。",
+      proj3_title: "机械臂原型",
+      proj3_desc: "开发多自由度机械臂原型，涵盖机构设计、舵机控制与运动学校准，实现末端执行器的精确定位。",
       contact_title: "联系我", contact_subtitle: "欢迎就合作或工作机会与我联系",
       contact_email: "邮箱", contact_linkedin: "领英", contact_github: "GitHub", contact_loc: "所在地",
       footer_rights: "保留所有权利。"
@@ -499,7 +515,7 @@
     document.querySelectorAll('.lang-btn').forEach(b => {
       b.classList.toggle('active', b.dataset.lang === lang);
     });
-    document.title = lang === 'zh' ? 'Sylvester | 机械工程师' : 'Sylvester | Mechanical Engineer';
+    document.title = lang === 'zh' ? 'Sylvester | 机械电子工程师' : 'Sylvester | Mechatronics Engineer';
     try { localStorage.setItem('site_lang', lang); } catch (e) {}
   }
 
