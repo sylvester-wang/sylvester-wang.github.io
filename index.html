@@ -3,181 +3,357 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Sylvester | Mechanical Engineer</title>
-<meta name="description" content="Sylvester - Mechanical Engineer. Personal portfolio website." />
+<title>Sylvester | Indie Developer</title>
+<meta name="description" content="Sylvester — indie developer building & shipping profitable products in public." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --primary: #0f3460;
-    --accent: #e94560;
-    --bg: #f6f8fb;
-    --card: #ffffff;
-    --text: #1a2332;
-    --muted: #5a6478;
-    --border: #e4e9f2;
-    --shadow: 0 8px 24px rgba(15, 52, 96, 0.08);
+    --bg: #0a0a0a;
+    --surface: #111114;
+    --surface-2: #16161b;
+    --border: #1f1f25;
+    --border-soft: #181820;
+    --text: #ededf0;
+    --muted: #8a8a94;
+    --muted-2: #5a5a64;
+    --accent: #ff6b35;
+    --accent-soft: rgba(255, 107, 53, 0.12);
+    --green: #4ade80;
+    --yellow: #facc15;
+    --red: #f87171;
+    --radius: 14px;
+    --radius-sm: 8px;
+    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
-      "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+    font-family: var(--sans);
     background: var(--bg);
     color: var(--text);
-    line-height: 1.7;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
   a { color: inherit; text-decoration: none; }
+  ::selection { background: var(--accent); color: #fff; }
+
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
 
   /* Nav */
   header.nav {
     position: sticky; top: 0; z-index: 50;
-    background: rgba(255,255,255,0.92);
-    backdrop-filter: saturate(180%) blur(10px);
-    border-bottom: 1px solid var(--border);
+    background: rgba(10,10,10,0.72);
+    backdrop-filter: saturate(180%) blur(14px);
+    border-bottom: 1px solid var(--border-soft);
   }
   .nav-inner {
-    max-width: 1100px; margin: 0 auto; padding: 14px 24px;
+    max-width: 880px; margin: 0 auto; padding: 14px 24px;
     display: flex; align-items: center; justify-content: space-between;
   }
-  .logo { font-weight: 800; letter-spacing: 1px; color: var(--primary); font-size: 1.1rem; }
-  .nav-links { display: flex; gap: 26px; align-items: center; }
-  .nav-links a { font-size: 0.92rem; color: var(--muted); transition: color .2s; }
-  .nav-links a:hover { color: var(--primary); }
+  .logo {
+    font-weight: 800; letter-spacing: -0.3px; font-size: 1rem;
+    color: var(--text); display: flex; align-items: center; gap: 8px;
+  }
+  .logo-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent); display: inline-block;
+    box-shadow: 0 0 12px var(--accent);
+  }
+  .nav-links { display: flex; gap: 22px; align-items: center; }
+  .nav-links a {
+    font-size: 0.86rem; color: var(--muted); font-weight: 500;
+    transition: color .15s;
+  }
+  .nav-links a:hover { color: var(--text); }
   .lang-switch {
-    display: flex; gap: 4px; padding: 4px;
-    background: #eef2f8; border-radius: 999px;
+    display: flex; gap: 2px; padding: 3px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 999px;
   }
   .lang-btn {
     border: none; background: transparent; cursor: pointer;
-    padding: 4px 12px; border-radius: 999px; font-size: 0.82rem;
-    color: var(--muted); font-weight: 600; transition: all .2s;
+    padding: 3px 10px; border-radius: 999px; font-size: 0.74rem;
+    color: var(--muted); font-weight: 600; transition: all .15s;
+    font-family: var(--mono);
   }
-  .lang-btn.active { background: var(--primary); color: #fff; }
+  .lang-btn.active { background: var(--accent); color: #0a0a0a; }
 
   /* Hero */
-  .hero {
-    background: linear-gradient(135deg, #0f3460 0%, #1a5276 100%);
-    color: #fff; padding: 90px 24px 80px;
-  }
-  .hero-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
+  .hero { padding: 100px 24px 60px; text-align: center; }
+  .hero .wrap { display: flex; flex-direction: column; align-items: center; }
   .avatar {
-    width: 160px; height: 160px; border-radius: 50%;
-    background: #fff; display: flex; align-items: center; justify-content: center;
-    font-size: 4rem; font-weight: 800; color: var(--primary);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.25); flex-shrink: 0;
-    border: 5px solid rgba(255,255,255,0.2);
+    width: 84px; height: 84px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), #ff9466);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem; font-weight: 800; color: #0a0a0a;
+    margin-bottom: 24px; box-shadow: 0 8px 32px rgba(255,107,53,0.35);
   }
-  .hero-text h1 { font-size: 2.6rem; margin-bottom: 6px; }
-  .hero-text .role { font-size: 1.15rem; opacity: 0.85; margin-bottom: 18px; }
-  .hero-text p { max-width: 560px; opacity: 0.9; margin-bottom: 22px; }
-  .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+  .hero h1 {
+    font-size: 2.6rem; font-weight: 800; letter-spacing: -0.03em;
+    line-height: 1.1; margin-bottom: 12px;
+  }
+  .hero h1 .wave { display: inline-block; transform-origin: 70% 70%; animation: wave 2.4s ease-in-out infinite; }
+  @keyframes wave {
+    0%, 60%, 100% { transform: rotate(0deg); }
+    10% { transform: rotate(14deg); }
+    20% { transform: rotate(-8deg); }
+    30% { transform: rotate(14deg); }
+    40% { transform: rotate(-4deg); }
+    50% { transform: rotate(10deg); }
+  }
+  .hero .role {
+    color: var(--muted); font-size: 1.05rem; margin-bottom: 18px;
+    font-family: var(--mono);
+  }
+  .hero .role .accent { color: var(--accent); }
+  .hero p.tagline {
+    max-width: 580px; color: var(--muted); font-size: 1rem;
+    margin: 0 auto 28px;
+  }
+  .hero-buttons { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
   .btn {
-    display: inline-block; padding: 11px 22px; border-radius: 8px;
-    font-weight: 600; font-size: 0.95rem; transition: all .2s; cursor: pointer;
-    border: none;
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 18px; border-radius: var(--radius-sm);
+    font-weight: 600; font-size: 0.88rem; transition: all .15s; cursor: pointer;
+    border: 1px solid transparent;
   }
-  .btn-primary { background: var(--accent); color: #fff; }
-  .btn-primary:hover { background: #d63b54; transform: translateY(-2px); }
-  .btn-ghost { background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.4); }
-  .btn-ghost:hover { background: rgba(255,255,255,0.28); }
+  .btn-primary { background: var(--accent); color: #0a0a0a; }
+  .btn-primary:hover { background: #ff8556; transform: translateY(-1px); }
+  .btn-ghost {
+    background: var(--surface); color: var(--text);
+    border: 1px solid var(--border);
+  }
+  .btn-ghost:hover { border-color: var(--muted-2); background: var(--surface-2); }
+
+  /* Stats */
+  .stats {
+    border-top: 1px solid var(--border-soft);
+    border-bottom: 1px solid var(--border-soft);
+    padding: 24px;
+  }
+  .stats .wrap {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+  }
+  .stat { text-align: center; }
+  .stat .num {
+    font-size: 1.7rem; font-weight: 800; color: var(--text);
+    letter-spacing: -0.02em; line-height: 1;
+    font-family: var(--mono);
+  }
+  .stat .num .unit { font-size: 1rem; color: var(--muted); margin-left: 2px; }
+  .stat .label {
+    font-size: 0.76rem; color: var(--muted); margin-top: 6px;
+    text-transform: uppercase; letter-spacing: 0.08em;
+  }
 
   /* Sections */
-  section { padding: 70px 24px; }
-  .container { max-width: 1100px; margin: 0 auto; }
-  .section-title {
-    font-size: 1.8rem; color: var(--primary); margin-bottom: 8px;
+  section.block { padding: 64px 24px; }
+  .block-head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    margin-bottom: 28px; gap: 16px; flex-wrap: wrap;
+  }
+  .block-title {
+    font-size: 1.15rem; font-weight: 700; letter-spacing: -0.01em;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .block-title .marker {
+    font-family: var(--mono); color: var(--accent); font-size: 0.9rem;
+  }
+  .block-meta {
+    font-family: var(--mono); font-size: 0.78rem; color: var(--muted-2);
+  }
+
+  /* Now section */
+  .now-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 24px;
+    display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start;
+  }
+  .now-pulse {
+    width: 10px; height: 10px; border-radius: 50%; background: var(--green);
+    margin-top: 8px; position: relative;
+  }
+  .now-pulse::after {
+    content: ''; position: absolute; inset: -4px; border-radius: 50%;
+    border: 1px solid var(--green); opacity: 0.6;
+    animation: pulse 1.8s ease-out infinite;
+  }
+  @keyframes pulse {
+    0% { transform: scale(0.8); opacity: 0.8; }
+    100% { transform: scale(2.4); opacity: 0; }
+  }
+  .now-body h3 {
+    font-size: 1rem; font-weight: 700; margin-bottom: 6px;
+  }
+  .now-body p { color: var(--muted); font-size: 0.92rem; }
+  .now-body .now-tags {
+    display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap;
+  }
+
+  /* Products grid */
+  .products {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;
+  }
+  .product {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 20px;
+    transition: border-color .15s, transform .15s, background .15s;
+    display: flex; flex-direction: column; gap: 12px;
+    position: relative; overflow: hidden;
+  }
+  .product:hover {
+    border-color: var(--muted-2); transform: translateY(-2px);
+    background: var(--surface-2);
+  }
+  .product-head {
+    display: flex; align-items: center; gap: 12px;
+  }
+  .product-icon {
+    width: 38px; height: 38px; border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; font-weight: 800; color: #0a0a0a;
+    flex-shrink: 0;
+  }
+  .product-name {
+    font-weight: 700; font-size: 1rem; letter-spacing: -0.01em;
+    flex: 1; min-width: 0;
+  }
+  .product-status {
+    font-size: 0.7rem; font-weight: 600; padding: 3px 8px;
+    border-radius: 999px; font-family: var(--mono);
+    text-transform: uppercase; letter-spacing: 0.05em;
+    flex-shrink: 0;
+  }
+  .status-launched { background: rgba(74,222,128,0.12); color: var(--green); }
+  .status-building { background: rgba(250,204,21,0.12); color: var(--yellow); }
+  .status-pre { background: rgba(138,138,148,0.12); color: var(--muted); }
+  .status-acquired { background: rgba(248,113,113,0.12); color: var(--red); }
+
+  .product-desc { color: var(--muted); font-size: 0.88rem; flex: 1; }
+  .product-foot {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; padding-top: 12px;
+    border-top: 1px dashed var(--border);
+  }
+  .product-rev {
+    font-family: var(--mono); font-size: 0.82rem; color: var(--text);
+    font-weight: 600;
+  }
+  .product-rev .rev-label { color: var(--muted-2); margin-right: 4px; }
+  .product-link {
+    font-size: 0.78rem; color: var(--muted); font-family: var(--mono);
+    display: inline-flex; align-items: center; gap: 4px;
+    transition: color .15s;
+  }
+  .product:hover .product-link { color: var(--accent); }
+  .product-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tag {
+    background: var(--surface-2); color: var(--muted);
+    padding: 3px 8px; border-radius: 5px; font-size: 0.72rem;
+    font-family: var(--mono); border: 1px solid var(--border);
+  }
+
+  /* Stack */
+  .stack-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+  }
+  .stack-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 18px;
+  }
+  .stack-card h4 {
+    font-size: 0.78rem; color: var(--muted); margin-bottom: 12px;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    font-family: var(--mono);
+  }
+  .stack-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .stack-tags .tag {
+    background: transparent; color: var(--text);
+    border: 1px solid var(--border);
+  }
+
+  /* Writing */
+  .writing-list { display: flex; flex-direction: column; gap: 2px; }
+  .writing-item {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 16px; padding: 14px 4px;
+    border-bottom: 1px solid var(--border-soft);
+    transition: padding .15s;
+  }
+  .writing-item:hover { padding-left: 10px; }
+  .writing-item:last-child { border-bottom: none; }
+  .writing-title { font-size: 0.94rem; font-weight: 500; }
+  .writing-date {
+    font-family: var(--mono); font-size: 0.78rem; color: var(--muted-2);
+    flex-shrink: 0;
+  }
+
+  /* Newsletter */
+  .newsletter {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 36px 28px;
     text-align: center;
   }
-  .section-subtitle {
-    text-align: center; color: var(--muted); margin-bottom: 40px; font-size: 1rem;
+  .newsletter h3 {
+    font-size: 1.3rem; font-weight: 700; letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  .newsletter p {
+    color: var(--muted); font-size: 0.92rem; margin-bottom: 22px;
+    max-width: 460px; margin-left: auto; margin-right: auto;
+  }
+  .nl-form {
+    display: flex; gap: 8px; max-width: 380px; margin: 0 auto;
+  }
+  .nl-input {
+    flex: 1; background: var(--bg); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); padding: 11px 14px;
+    color: var(--text); font-size: 0.9rem; font-family: var(--sans);
+    transition: border-color .15s;
+  }
+  .nl-input:focus { outline: none; border-color: var(--accent); }
+  .nl-input::placeholder { color: var(--muted-2); }
+  .nl-count {
+    font-family: var(--mono); font-size: 0.76rem; color: var(--muted-2);
+    margin-top: 14px;
   }
 
-  /* About */
-  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-  .about-text p { color: var(--muted); margin-bottom: 14px; }
-  .info-list { list-style: none; }
-  .info-list li {
-    padding: 10px 0; border-bottom: 1px dashed var(--border);
-    display: flex; gap: 12px;
-  }
-  .info-list li:last-child { border-bottom: none; }
-  .info-label { font-weight: 700; color: var(--primary); min-width: 90px; }
-  .info-value { color: var(--muted); }
-
-  /* Skills */
-  .skills-wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-  .skill-card {
-    background: var(--card); border-radius: 12px; padding: 26px;
-    box-shadow: var(--shadow); border-top: 4px solid var(--accent);
-  }
-  .skill-card h3 { color: var(--primary); margin-bottom: 14px; font-size: 1.1rem; }
-  .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-  .tag {
-    background: #eef2f8; color: var(--primary);
-    padding: 5px 12px; border-radius: 6px; font-size: 0.82rem; font-weight: 500;
-  }
-
-  /* Experience */
-  .timeline { position: relative; max-width: 800px; margin: 0 auto; }
-  .timeline::before {
-    content: ''; position: absolute; left: 20px; top: 0; bottom: 0;
-    width: 2px; background: var(--border);
-  }
-  .tl-item { position: relative; padding-left: 60px; margin-bottom: 36px; }
-  .tl-dot {
-    position: absolute; left: 12px; top: 6px;
-    width: 18px; height: 18px; border-radius: 50%;
-    background: var(--accent); border: 4px solid var(--bg);
-  }
-  .tl-date { font-size: 0.85rem; color: var(--accent); font-weight: 700; margin-bottom: 4px; }
-  .tl-title { font-size: 1.1rem; color: var(--primary); font-weight: 700; }
-  .tl-org { color: var(--muted); font-size: 0.92rem; margin-bottom: 8px; }
-  .tl-desc { color: var(--muted); font-size: 0.95rem; }
-
-  /* Projects */
-  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-  .project-card {
-    background: var(--card); border-radius: 12px; overflow: hidden;
-    box-shadow: var(--shadow); transition: transform .25s, box-shadow .25s;
-  }
-  .project-card:hover { transform: translateY(-5px); box-shadow: 0 14px 30px rgba(15,52,96,0.14); }
-  .proj-img {
-    height: 160px; background: linear-gradient(135deg, #1a5276, #0f3460);
-    display: flex; align-items: center; justify-content: center;
-    color: rgba(255,255,255,0.7); font-size: 3rem;
-  }
-  .proj-body { padding: 20px 24px 24px; }
-  .proj-body h3 { color: var(--primary); margin-bottom: 8px; font-size: 1.1rem; }
-  .proj-body p { color: var(--muted); font-size: 0.9rem; margin-bottom: 12px; }
-  .proj-body .tag { background: #fef0f3; color: var(--accent); }
-
-  /* Contact */
-  .contact { background: var(--primary); color: #fff; }
-  .contact .section-title { color: #fff; }
-  .contact .section-subtitle { color: rgba(255,255,255,0.7); }
-  .contact-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px; max-width: 900px; margin: 0 auto;
-  }
-  .contact-card {
-    background: rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 20px;
-    text-align: center; transition: background .2s;
-  }
-  .contact-card:hover { background: rgba(255,255,255,0.16); }
-  .contact-icon { font-size: 2rem; margin-bottom: 10px; }
-  .contact-card h4 { margin-bottom: 6px; font-size: 0.95rem; opacity: 0.8; }
-  .contact-card a, .contact-card span { font-weight: 600; word-break: break-all; }
-
+  /* Contact / Footer */
   footer {
-    background: #0a2540; color: rgba(255,255,255,0.6);
-    text-align: center; padding: 26px 20px; font-size: 0.88rem;
+    border-top: 1px solid var(--border-soft);
+    padding: 36px 24px;
+  }
+  .footer-inner {
+    max-width: 880px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; flex-wrap: wrap;
+  }
+  .socials { display: flex; gap: 18px; align-items: center; }
+  .social {
+    font-size: 0.84rem; color: var(--muted); font-family: var(--mono);
+    display: inline-flex; align-items: center; gap: 6px;
+    transition: color .15s;
+  }
+  .social:hover { color: var(--text); }
+  .copyright {
+    font-size: 0.8rem; color: var(--muted-2); font-family: var(--mono);
   }
 
   @media (max-width: 720px) {
-    .hero-inner { flex-direction: column; text-align: center; }
-    .hero-text h1 { font-size: 2rem; }
-    .about-grid { grid-template-columns: 1fr; }
-    .nav-links { gap: 14px; }
-    .nav-links a:not(.lang-switch .lang-btn) { display: none; }
+    .hero { padding: 70px 20px 40px; }
+    .hero h1 { font-size: 2rem; }
+    .stats .wrap { grid-template-columns: repeat(2, 1fr); gap: 22px 16px; }
+    .products { grid-template-columns: 1fr; }
+    .nav-links a:not(.lang-switch *) { display: none; }
+    .nl-form { flex-direction: column; }
+    .now-card { grid-template-columns: 1fr; }
+    .now-pulse { margin-top: 0; }
   }
 </style>
 </head>
@@ -185,16 +361,15 @@
 
 <header class="nav">
   <div class="nav-inner">
-    <div class="logo">SYLVESTER</div>
+    <a href="#" class="logo"><span class="logo-dot"></span>Sylvester</a>
     <nav class="nav-links">
-      <a href="#about" data-i18n="nav_about">About</a>
-      <a href="#skills" data-i18n="nav_skills">Skills</a>
-      <a href="#experience" data-i18n="nav_experience">Experience</a>
-      <a href="#projects" data-i18n="nav_projects">Projects</a>
-      <a href="#contact" data-i18n="nav_contact">Contact</a>
+      <a href="#now" data-i18n="nav_now">Now</a>
+      <a href="#products" data-i18n="nav_products">Products</a>
+      <a href="#stack" data-i18n="nav_stack">Stack</a>
+      <a href="#writing" data-i18n="nav_writing">Writing</a>
       <div class="lang-switch">
         <button class="lang-btn active" data-lang="en">EN</button>
-        <button class="lang-btn" data-lang="zh">中文</button>
+        <button class="lang-btn" data-lang="zh">中</button>
       </div>
     </nav>
   </div>
@@ -202,306 +377,375 @@
 
 <!-- Hero -->
 <section class="hero">
-  <div class="hero-inner">
+  <div class="wrap">
     <div class="avatar">S</div>
-    <div class="hero-text">
-      <h1 data-i18n="hero_name">Hi, I'm Sylvester</h1>
-      <div class="role" data-i18n="hero_role">Mechatronics Engineer · Robot System Design</div>
-      <p data-i18n="hero_desc">
-        I design complete robot systems that blend mechanical structure, embedded electronics,
-        and control software — turning ideas into machines that move, sense, and think.
+    <h1><span class="wave">👋</span> <span data-i18n="hero_name">Hey, I'm Sylvester</span></h1>
+    <div class="role"><span data-i18n="hero_role_pre">Indie developer ·</span> <span class="accent" data-i18n="hero_role_accent">building in public</span></div>
+    <p class="tagline" data-i18n="hero_tag">
+      I design, ship and grow small software products on my own. From idea to first paying
+      customer in days, not months — sharing numbers, lessons and stack along the way.
+    </p>
+    <div class="hero-buttons">
+      <a href="#products" class="btn btn-primary" data-i18n="hero_btn_products">See my products</a>
+      <a href="#newsletter" class="btn btn-ghost" data-i18n="hero_btn_nl">Join the newsletter</a>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="stats">
+  <div class="wrap">
+    <div class="stat">
+      <div class="num">12</div>
+      <div class="label" data-i18n="stat_products">Products shipped</div>
+    </div>
+    <div class="stat">
+      <div class="num">$8.4<span class="unit">k</span></div>
+      <div class="label" data-i18n="stat_mrr">MRR</div>
+    </div>
+    <div class="stat">
+      <div class="num">3<span class="unit">yrs</span></div>
+      <div class="label" data-i18n="stat_years">Building solo</div>
+    </div>
+    <div class="stat">
+      <div class="num">48<span class="unit">k</span></div>
+      <div class="label" data-i18n="stat_users">Active users</div>
+    </div>
+  </div>
+</section>
+
+<!-- Now -->
+<section id="now" class="block">
+  <div class="wrap">
+    <div class="block-head">
+      <h2 class="block-title"><span class="marker">/01</span><span data-i18n="now_title">Now</span></h2>
+      <span class="block-meta" id="now-date"></span>
+    </div>
+    <div class="now-card">
+      <div class="now-pulse"></div>
+      <div class="now-body">
+        <h3 data-i18n="now_h">Shipping DevNotes v2 + writing weekly</h3>
+        <p data-i18n="now_p">
+          Currently heads-down on the v2 rewrite of DevNotes — faster editor, AI inline
+          summaries, sync across devices. Also publishing a short essay every Friday
+          about what I learned shipping that week.
+        </p>
+        <div class="now-tags">
+          <span class="tag">Next.js</span>
+          <span class="tag">tRPC</span>
+          <span class="tag">Postgres</span>
+          <span class="tag">Stripe</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Products -->
+<section id="products" class="block" style="background:var(--bg);">
+  <div class="wrap">
+    <div class="block-head">
+      <h2 class="block-title"><span class="marker">/02</span><span data-i18n="prod_title">Products</span></h2>
+      <span class="block-meta" data-i18n="prod_meta">shipped &amp; maintained solo</span>
+    </div>
+    <div class="products">
+
+      <a class="product" href="#" target="_blank" rel="noopener">
+        <div class="product-head">
+          <div class="product-icon" style="background:#ff6b35;">D</div>
+          <div class="product-name">DevNotes</div>
+          <span class="product-status status-launched" data-i18n="st_launched">Launched</span>
+        </div>
+        <div class="product-desc" data-i18n="p1_desc">
+          Markdown notes app for developers. Fast, offline-first, with AI inline
+          summaries and git-style version history.
+        </div>
+        <div class="product-tags">
+          <span class="tag">Next.js</span><span class="tag">SQLite</span><span class="tag">OpenAI</span>
+        </div>
+        <div class="product-foot">
+          <div class="product-rev"><span class="rev-label">MRR</span>$3.2k</div>
+          <span class="product-link">devnotes.app →</span>
+        </div>
+      </a>
+
+      <a class="product" href="#" target="_blank" rel="noopener">
+        <div class="product-head">
+          <div class="product-icon" style="background:#4ade80;">S</div>
+          <div class="product-name">ShipFast</div>
+          <span class="product-status status-launched" data-i18n="st_launched">Launched</span>
+        </div>
+        <div class="product-desc" data-i18n="p2_desc">
+          Next.js + Stripe + auth boilerplate that lets indie hackers launch a SaaS
+          in a weekend instead of a month.
+        </div>
+        <div class="product-tags">
+          <span class="tag">Next.js</span><span class="tag">Stripe</span><span class="tag">Prisma</span>
+        </div>
+        <div class="product-foot">
+          <div class="product-rev"><span class="rev-label">MRR</span>$4.1k</div>
+          <span class="product-link">shipfast.dev →</span>
+        </div>
+      </a>
+
+      <a class="product" href="#" target="_blank" rel="noopener">
+        <div class="product-head">
+          <div class="product-icon" style="background:#facc15;">T</div>
+          <div class="product-name">TaskFlow</div>
+          <span class="product-status status-launched" data-i18n="st_launched">Launched</span>
+        </div>
+        <div class="product-desc" data-i18n="p3_desc">
+          Minimalist keyboard-driven todo app for makers. One shortcut to capture,
+          one to ship. Free, with a $19 one-time pro tier.
+        </div>
+        <div class="product-tags">
+          <span class="tag">React</span><span class="tag">Tauri</span><span class="tag">Rust</span>
+        </div>
+        <div class="product-foot">
+          <div class="product-rev"><span class="rev-label">Users</span>12k</div>
+          <span class="product-link">taskflow.app →</span>
+        </div>
+      </a>
+
+      <a class="product" href="#" target="_blank" rel="noopener">
+        <div class="product-head">
+          <div class="product-icon" style="background:#60a5fa;">I</div>
+          <div class="product-name">IndieKit</div>
+          <span class="product-status status-launched" data-i18n="st_launched">Launched</span>
+        </div>
+        <div class="product-desc" data-i18n="p4_desc">
+          TypeScript-first monorepo starter for shipping multi-product indie apps:
+          shared auth, billing, analytics and design system.
+        </div>
+        <div class="product-tags">
+          <span class="tag">Turborepo</span><span class="tag">TypeScript</span><span class="tag">tRPC</span>
+        </div>
+        <div class="product-foot">
+          <div class="product-rev"><span class="rev-label">MRR</span>$1.1k</div>
+          <span class="product-link">indiekit.dev →</span>
+        </div>
+      </a>
+
+      <a class="product" href="#" target="_blank" rel="noopener">
+        <div class="product-head">
+          <div class="product-icon" style="background:#a78bfa;">P</div>
+          <div class="product-name">PixelCraft</div>
+          <span class="product-status status-building" data-i18n="st_building">Building</span>
+        </div>
+        <div class="product-desc" data-i18n="p5_desc">
+          Browser-based pixel-art editor with palette constraints, animation timeline
+          and one-click export to spritesheets.
+        </div>
+        <div class="product-tags">
+          <span class="tag">Vue</span><span class="tag">Canvas</span><span class="tag">WebGL</span>
+        </div>
+        <div class="product-foot">
+          <div class="product-rev"><span class="rev-label">Status</span>beta</div>
+          <span class="product-link">pixelcraft.app →</span>
+        </div>
+      </a>
+
+      <a class="product" href="#" target="_blank" rel="noopener">
+        <div class="product-head">
+          <div class="product-icon" style="background:#f472b6;">A</div>
+          <div class="product-name">Asyncast</div>
+          <span class="product-status status-pre" data-i18n="st_pre">Pre-launch</span>
+        </div>
+        <div class="product-desc" data-i18n="p6_desc">
+          Async podcasting: record short voice notes, listeners reply on their own
+          time. Building the waitlist now — 320+ makers signed up.
+        </div>
+        <div class="product-tags">
+          <span class="tag">Next.js</span><span class="tag">FFmpeg</span><span class="tag">S3</span>
+        </div>
+        <div class="product-foot">
+          <div class="product-rev"><span class="rev-label">Waitlist</span>320</div>
+          <span class="product-link">asyncast.fm →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- Stack -->
+<section id="stack" class="block">
+  <div class="wrap">
+    <div class="block-head">
+      <h2 class="block-title"><span class="marker">/03</span><span data-i18n="stack_title">Stack</span></h2>
+      <span class="block-meta" data-i18n="stack_meta">tools I reach for daily</span>
+    </div>
+    <div class="stack-grid">
+      <div class="stack-card">
+        <h4 data-i18n="stack_fe">Frontend</h4>
+        <div class="stack-tags">
+          <span class="tag">Next.js</span><span class="tag">React</span>
+          <span class="tag">Tailwind</span><span class="tag">Astro</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <h4 data-i18n="stack_be">Backend</h4>
+        <div class="stack-tags">
+          <span class="tag">Node</span><span class="tag">tRPC</span>
+          <span class="tag">Postgres</span><span class="tag">Redis</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <h4 data-i18n="stack_ship">Ship &amp; bill</h4>
+        <div class="stack-tags">
+          <span class="tag">Stripe</span><span class="tag">Resend</span>
+          <span class="tag">Vercel</span><span class="tag">Cloudflare</span>
+        </div>
+      </div>
+      <div class="stack-card">
+        <h4 data-i18n="stack_ops">Ops</h4>
+        <div class="stack-tags">
+          <span class="tag">Plausible</span><span class="tag">Linear</span>
+          <span class="tag">GitHub</span><span class="tag">Notion</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Writing -->
+<section id="writing" class="block" style="background:var(--bg);">
+  <div class="wrap">
+    <div class="block-head">
+      <h2 class="block-title"><span class="marker">/04</span><span data-i18n="write_title">Writing</span></h2>
+      <span class="block-meta" data-i18n="write_meta">shipping essays, weekly</span>
+    </div>
+    <div class="writing-list">
+      <a class="writing-item" href="#">
+        <span class="writing-title" data-i18n="w1">How I shipped 6 products in 12 months without burning out</span>
+        <span class="writing-date">2026-09-05</span>
+      </a>
+      <a class="writing-item" href="#">
+        <span class="writing-title" data-i18n="w2">The $0 marketing stack that got me my first 1,000 users</span>
+        <span class="writing-date">2026-08-29</span>
+      </a>
+      <a class="writing-item" href="#">
+        <span class="writing-title" data-i18n="w3">Why I stopped using Redux and never looked back</span>
+        <span class="writing-date">2026-08-22</span>
+      </a>
+      <a class="writing-item" href="#">
+        <span class="writing-title" data-i18n="w4">Pricing your indie SaaS: a simple framework</span>
+        <span class="writing-date">2026-08-15</span>
+      </a>
+      <a class="writing-item" href="#">
+        <span class="writing-title" data-i18n="w5">From 0 to $3k MRR on DevNotes — full timeline</span>
+        <span class="writing-date">2026-08-08</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section id="newsletter" class="block">
+  <div class="wrap">
+    <div class="newsletter">
+      <h3 data-i18n="nl_title">One short essay, every Friday.</h3>
+      <p data-i18n="nl_desc">
+        No fluff. One thing I learned shipping that week, the numbers behind it,
+        and the code I wrote. Read by 2,100+ indie makers.
       </p>
-      <div class="hero-buttons">
-        <a href="#projects" class="btn btn-primary" data-i18n="hero_btn_projects">View Projects</a>
-        <a href="#contact" class="btn btn-ghost" data-i18n="hero_btn_contact">Get in Touch</a>
+      <form class="nl-form" onsubmit="event.preventDefault(); this.querySelector('.nl-msg').textContent = '✓ subscribed';">
+        <input class="nl-input" type="email" placeholder="you@example.com" required />
+        <button class="btn btn-primary" type="submit" data-i18n="nl_btn">Subscribe</button>
+      </form>
+      <div class="nl-count">
+        <span data-i18n="nl_count_pre">2,141 subscribers ·</span>
+        <span data-i18n="nl_count_post">unsubscribe in one click</span>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- About -->
-<section id="about">
-  <div class="container">
-    <h2 class="section-title" data-i18n="about_title">About Me</h2>
-    <p class="section-subtitle" data-i18n="about_subtitle">A brief introduction</p>
-    <div class="about-grid">
-      <div class="about-text">
-        <p data-i18n="about_p1">
-          I am a mechatronics engineer focused on robot system design. I work across
-          the full stack — mechanical structure, actuators, embedded electronics, and
-          control software — to build integrated, reliable robotic systems.
-        </p>
-        <p data-i18n="about_p2">
-          Rather than designing parts in isolation, I enjoy bringing mechanics, electronics,
-          and software together into a coherent system. From concept and simulation to
-          prototyping and tuning, I aim for robots that are robust, efficient, and ready
-          for real-world tasks.
-        </p>
-      </div>
-      <div>
-        <ul class="info-list">
-          <li><span class="info-label" data-i18n="info_name">Name</span><span class="info-value">Sylvester</span></li>
-          <li><span class="info-label" data-i18n="info_role">Role</span><span class="info-value" data-i18n="info_role_v">Mechanical Engineer</span></li>
-          <li><span class="info-label" data-i18n="info_loc">Location</span><span class="info-value">—</span></li>
-          <li><span class="info-label" data-i18n="info_email">Email</span><span class="info-value">sylvester@example.com</span></li>
-          <li><span class="info-label" data-i18n="info_lang">Languages</span><span class="info-value" data-i18n="info_lang_v">English, Chinese</span></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Skills -->
-<section id="skills" style="background:#eef2f8;">
-  <div class="container">
-    <h2 class="section-title" data-i18n="skills_title">Skills &amp; Tools</h2>
-    <p class="section-subtitle" data-i18n="skills_subtitle">Core competencies and software I use daily</p>
-    <div class="skills-wrap">
-      <div class="skill-card">
-        <h3 data-i18n="skill_design_title">Mechanical &amp; CAD Design</h3>
-        <div class="skill-tags">
-          <span class="tag">SolidWorks</span>
-          <span class="tag">AutoCAD</span>
-          <span class="tag">Inventor</span>
-          <span class="tag">Creo</span>
-          <span class="tag" data-i18n="skill_mech">Mechanism Design</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <h3 data-i18n="skill_analysis_title">Analysis &amp; Simulation</h3>
-        <div class="skill-tags">
-          <span class="tag">ANSYS</span>
-          <span class="tag">Abaqus</span>
-          <span class="tag">MATLAB</span>
-          <span class="tag">FEA</span>
-          <span class="tag" data-i18n="skill_kin">Kinematics</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <h3 data-i18n="skill_embedded_title">Embedded &amp; Control</h3>
-        <div class="skill-tags">
-          <span class="tag">Arduino</span>
-          <span class="tag">Raspberry Pi</span>
-          <span class="tag">STM32</span>
-          <span class="tag">PID Control</span>
-          <span class="tag" data-i18n="skill_motor">Motor &amp; Servo</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <h3 data-i18n="skill_robotics_title">Robotics &amp; Systems</h3>
-        <div class="skill-tags">
-          <span class="tag">ROS</span>
-          <span class="tag" data-i18n="skill_mfg_3d">3D Printing</span>
-          <span class="tag" data-i18n="skill_mfg_cnc">CNC Machining</span>
-          <span class="tag" data-i18n="skill_integrate">System Integration</span>
-          <span class="tag" data-i18n="skill_mfg_dfa">DFM / DFA</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <h3 data-i18n="skill_soft_title">Soft Skills</h3>
-        <div class="skill-tags">
-          <span class="tag" data-i18n="skill_soft_proj">Project Management</span>
-          <span class="tag" data-i18n="skill_soft_team">Team Collaboration</span>
-          <span class="tag" data-i18n="skill_soft_comm">Bilingual Communication</span>
-          <span class="tag" data-i18n="skill_soft_solve">Problem Solving</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Experience -->
-<section id="experience">
-  <div class="container">
-    <h2 class="section-title" data-i18n="exp_title">Experience</h2>
-    <p class="section-subtitle" data-i18n="exp_subtitle">My professional journey</p>
-    <div class="timeline">
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-date">2025.09 — 2026.03</div>
-        <div class="tl-title" data-i18n="exp1_title">Engineering Lead &amp; Co-Captain</div>
-        <div class="tl-org" data-i18n="exp1_org">FRC Team 6907</div>
-        <div class="tl-desc" data-i18n="exp1_desc">
-          Led the engineering sub-team and served as Co-Captain, overseeing robot mechanical design,
-          prototyping, and build while coordinating across strategy, programming, and outreach teams.
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-date">2024.07 — 2025.08</div>
-        <div class="tl-title" data-i18n="exp2_title">Team Member</div>
-        <div class="tl-org" data-i18n="exp2_org">FRC Team 6907</div>
-        <div class="tl-desc" data-i18n="exp2_desc">
-          Joined as a team member, participated in robot design, fabrication, and competition,
-          and gained hands-on experience in mechanical systems and team collaboration.
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Projects -->
-<section id="projects" style="background:#eef2f8;">
-  <div class="container">
-    <h2 class="section-title" data-i18n="proj_title">Featured Projects</h2>
-    <p class="section-subtitle" data-i18n="proj_subtitle">Selected work I'm proud of</p>
-    <div class="projects-grid">
-      <div class="project-card">
-        <div class="proj-img">🤖</div>
-        <div class="proj-body">
-          <h3 data-i18n="proj1_title">FRC Competition Robot</h3>
-          <p data-i18n="proj1_desc">
-            Led the end-to-end system design of the FRC competition robot, integrating mechanical
-            structure, drivetrain, actuators, and control systems to meet game objectives reliably.
-          </p>
-          <span class="tag">SolidWorks</span>
-          <span class="tag">ROS</span>
-          <span class="tag" data-i18n="skill_motor">Motor &amp; Servo</span>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="proj-img">⚙️</div>
-        <div class="proj-body">
-          <h3 data-i18n="proj2_title">Autonomous Mobile Robot</h3>
-          <p data-i18n="proj2_desc">
-            Designed a compact autonomous mobile robot with mecanum drive, integrated motor control,
-            sensor feedback, and embedded control logic for stable navigation.
-          </p>
-          <span class="tag">STM32</span>
-          <span class="tag">PID Control</span>
-          <span class="tag" data-i18n="skill_mfg_3d">3D Printing</span>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="proj-img">🛠️</div>
-        <div class="proj-body">
-          <h3 data-i18n="proj3_title">Robotic Manipulator Prototype</h3>
-          <p data-i18n="proj3_desc">
-            Developed a multi-DOF manipulator prototype covering mechanism design, servo control,
-            and kinematics calibration, achieving precise end-effector positioning.
-          </p>
-          <span class="tag">MATLAB</span>
-          <span class="tag" data-i18n="skill_kin">Kinematics</span>
-          <span class="tag" data-i18n="skill_mfg_cnc">CNC</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Contact -->
-<section id="contact" class="contact">
-  <div class="container">
-    <h2 class="section-title" data-i18n="contact_title">Get in Touch</h2>
-    <p class="section-subtitle" data-i18n="contact_subtitle">Feel free to reach out for collaboration or opportunities</p>
-    <div class="contact-grid">
-      <div class="contact-card">
-        <div class="contact-icon">✉️</div>
-        <h4 data-i18n="contact_email">Email</h4>
-        <a href="mailto:sylvester@example.com">sylvester@example.com</a>
-      </div>
-      <div class="contact-card">
-        <div class="contact-icon">💼</div>
-        <h4 data-i18n="contact_linkedin">LinkedIn</h4>
-        <a href="#" target="_blank" rel="noopener">linkedin.com/in/sylvester</a>
-      </div>
-      <div class="contact-card">
-        <div class="contact-icon">🐙</div>
-        <h4 data-i18n="contact_github">GitHub</h4>
-        <a href="https://github.com/sylvester-wang" target="_blank" rel="noopener">github.com/sylvester-wang</a>
-      </div>
-      <div class="contact-card">
-        <div class="contact-icon">📍</div>
-        <h4 data-i18n="contact_loc">Location</h4>
-        <span>—</span>
-      </div>
+      <div class="nl-msg" style="margin-top:10px;font-family:var(--mono);font-size:0.78rem;color:var(--green);"></div>
     </div>
   </div>
 </section>
 
 <footer>
-  © <span id="year"></span> Sylvester. <span data-i18n="footer_rights">All rights reserved.</span>
+  <div class="footer-inner">
+    <div class="copyright">© <span id="year"></span> Sylvester · <span data-i18n="footer_built">built &amp; shipped solo</span></div>
+    <div class="socials">
+      <a class="social" href="https://twitter.com/sylvester" target="_blank" rel="noopener">𝕏 Twitter</a>
+      <a class="social" href="https://github.com/sylvester-wang" target="_blank" rel="noopener">◆ GitHub</a>
+      <a class="social" href="mailto:hi@sylvester.dev">✉ Email</a>
+    </div>
+  </div>
 </footer>
 
 <script>
   const i18n = {
     en: {
-      nav_about: "About", nav_skills: "Skills", nav_experience: "Experience",
-      nav_projects: "Projects", nav_contact: "Contact",
-      hero_name: "Hi, I'm Sylvester",
-      hero_role: "Mechatronics Engineer · Robot System Design",
-      hero_desc: "I design complete robot systems that blend mechanical structure, embedded electronics, and control software — turning ideas into machines that move, sense, and think.",
-      hero_btn_projects: "View Projects", hero_btn_contact: "Get in Touch",
-      about_title: "About Me", about_subtitle: "A brief introduction",
-      about_p1: "I am a mechatronics engineer focused on robot system design. I work across the full stack — mechanical structure, actuators, embedded electronics, and control software — to build integrated, reliable robotic systems.",
-      about_p2: "Rather than designing parts in isolation, I enjoy bringing mechanics, electronics, and software together into a coherent system. From concept and simulation to prototyping and tuning, I aim for robots that are robust, efficient, and ready for real-world tasks.",
-      info_name: "Name", info_role: "Role", info_role_v: "Mechatronics Engineer",
-      info_loc: "Location", info_email: "Email", info_lang: "Languages", info_lang_v: "English, Chinese",
-      skills_title: "Skills & Tools", skills_subtitle: "Core competencies across mechanics, electronics and control",
-      skill_design_title: "Mechanical & CAD Design",
-      skill_analysis_title: "Analysis & Simulation",
-      skill_embedded_title: "Embedded & Control",
-      skill_robotics_title: "Robotics & Systems",
-      skill_mech: "Mechanism Design", skill_kin: "Kinematics",
-      skill_motor: "Motor & Servo", skill_integrate: "System Integration",
-      skill_mfg_cnc: "CNC Machining", skill_mfg_3d: "3D Printing", skill_mfg_dfa: "DFM / DFA",
-      skill_soft_title: "Soft Skills",
-      skill_soft_proj: "Project Management", skill_soft_team: "Team Collaboration",
-      skill_soft_comm: "Bilingual Communication", skill_soft_solve: "Problem Solving",
-      exp_title: "Experience", exp_subtitle: "My journey in robotics", exp_present: "Present",
-      exp1_title: "Engineering Lead & Co-Captain", exp1_org: "FRC Team 6907",
-      exp1_desc: "Led the engineering sub-team and served as Co-Captain, overseeing robot system design — from mechanism and drivetrain to actuator integration and control — while coordinating across strategy, programming, and outreach teams.",
-      exp2_title: "Team Member", exp2_org: "FRC Team 6907",
-      exp2_desc: "Joined as a team member, participated in robot mechanical design, electronics wiring, prototyping and competition, and gained hands-on experience in integrated robotic systems and team collaboration.",
-      proj_title: "Featured Projects", proj_subtitle: "Selected robot system designs",
-      proj1_title: "FRC Competition Robot",
-      proj1_desc: "Led the end-to-end system design of the FRC competition robot, integrating mechanical structure, drivetrain, actuators, and control systems to meet game objectives reliably.",
-      proj2_title: "Autonomous Mobile Robot",
-      proj2_desc: "Designed a compact autonomous mobile robot with mecanum drive, integrated motor control, sensor feedback, and embedded control logic for stable navigation.",
-      proj3_title: "Robotic Manipulator Prototype",
-      proj3_desc: "Developed a multi-DOF manipulator prototype covering mechanism design, servo control, and kinematics calibration, achieving precise end-effector positioning.",
-      contact_title: "Get in Touch", contact_subtitle: "Feel free to reach out for collaboration or opportunities",
-      contact_email: "Email", contact_linkedin: "LinkedIn", contact_github: "GitHub", contact_loc: "Location",
-      footer_rights: "All rights reserved."
+      nav_now: "Now", nav_products: "Products", nav_stack: "Stack", nav_writing: "Writing",
+      hero_name: "Hey, I'm Sylvester",
+      hero_role_pre: "Indie developer ·",
+      hero_role_accent: "building in public",
+      hero_tag: "I design, ship and grow small software products on my own. From idea to first paying customer in days, not months — sharing numbers, lessons and stack along the way.",
+      hero_btn_products: "See my products",
+      hero_btn_nl: "Join the newsletter",
+      stat_products: "Products shipped",
+      stat_mrr: "MRR", stat_years: "Building solo", stat_users: "Active users",
+      now_title: "Now",
+      now_h: "Shipping DevNotes v2 + writing weekly",
+      now_p: "Currently heads-down on the v2 rewrite of DevNotes — faster editor, AI inline summaries, sync across devices. Also publishing a short essay every Friday about what I learned shipping that week.",
+      prod_title: "Products", prod_meta: "shipped & maintained solo",
+      p1_desc: "Markdown notes app for developers. Fast, offline-first, with AI inline summaries and git-style version history.",
+      p2_desc: "Next.js + Stripe + auth boilerplate that lets indie hackers launch a SaaS in a weekend instead of a month.",
+      p3_desc: "Minimalist keyboard-driven todo app for makers. One shortcut to capture, one to ship. Free, with a $19 one-time pro tier.",
+      p4_desc: "TypeScript-first monorepo starter for shipping multi-product indie apps: shared auth, billing, analytics and design system.",
+      p5_desc: "Browser-based pixel-art editor with palette constraints, animation timeline and one-click export to spritesheets.",
+      p6_desc: "Async podcasting: record short voice notes, listeners reply on their own time. Building the waitlist now — 320+ makers signed up.",
+      stack_title: "Stack", stack_meta: "tools I reach for daily",
+      stack_fe: "Frontend", stack_be: "Backend", stack_ship: "Ship & bill", stack_ops: "Ops",
+      write_title: "Writing", write_meta: "shipping essays, weekly",
+      w1: "How I shipped 6 products in 12 months without burning out",
+      w2: "The $0 marketing stack that got me my first 1,000 users",
+      w3: "Why I stopped using Redux and never looked back",
+      w4: "Pricing your indie SaaS: a simple framework",
+      w5: "From 0 to $3k MRR on DevNotes — full timeline",
+      nl_title: "One short essay, every Friday.",
+      nl_desc: "No fluff. One thing I learned shipping that week, the numbers behind it, and the code I wrote. Read by 2,100+ indie makers.",
+      nl_btn: "Subscribe",
+      nl_count_pre: "2,141 subscribers ·",
+      nl_count_post: "unsubscribe in one click",
+      st_launched: "Launched", st_building: "Building", st_pre: "Pre-launch",
+      footer_built: "built & shipped solo"
     },
     zh: {
-      nav_about: "关于", nav_skills: "技能", nav_experience: "经历",
-      nav_projects: "项目", nav_contact: "联系",
+      nav_now: "动态", nav_products: "产品", nav_stack: "技术栈", nav_writing: "文章",
       hero_name: "你好，我是 Sylvester",
-      hero_role: "机械电子工程师 · 机器人系统设计",
-      hero_desc: "我设计完整的机器人系统，融合机械结构、嵌入式电子与控制软件——把想法变成能够运动、感知与思考的机器。",
-      hero_btn_projects: "查看项目", hero_btn_contact: "联系我",
-      about_title: "关于我", about_subtitle: "个人简介",
-      about_p1: "我是一名机械电子工程师，主攻机器人系统设计。我跨越机械结构、执行器、嵌入式电子与控制软件的全链路，打造集成度高、稳定可靠的机器人系统。",
-      about_p2: "我不满足于孤立地设计零件，更享受把机械、电子与软件融合成一个完整系统。从概念与仿真到样机制作与调试，我致力于做出坚固、高效、能胜任真实任务的机器人。",
-      info_name: "姓名", info_role: "职位", info_role_v: "机械电子工程师",
-      info_loc: "所在地", info_email: "邮箱", info_lang: "语言", info_lang_v: "英语、中文",
-      skills_title: "技能与工具", skills_subtitle: "横跨机械、电子与控制的核心能力",
-      skill_design_title: "机械与 CAD 设计",
-      skill_analysis_title: "分析与仿真",
-      skill_embedded_title: "嵌入式与控制",
-      skill_robotics_title: "机器人与系统",
-      skill_mech: "机构设计", skill_kin: "运动学",
-      skill_motor: "电机与舵机", skill_integrate: "系统集成",
-      skill_mfg_cnc: "CNC 加工", skill_mfg_3d: "3D 打印", skill_mfg_dfa: "DFM / DFA",
-      skill_soft_title: "软技能",
-      skill_soft_proj: "项目管理", skill_soft_team: "团队协作",
-      skill_soft_comm: "双语沟通", skill_soft_solve: "问题解决",
-      exp_title: "经历", exp_subtitle: "我的机器人之路", exp_present: "至今",
-      exp1_title: "工程组负责人 / 联合队长（Co-Captain）", exp1_org: "FRC 6907 战队",
-      exp1_desc: "担任工程组负责人及联合队长，统筹机器人系统设计——从机构、传动到执行器集成与控制，并协调策略、编程、宣传等各组工作。",
-      exp2_title: "学员", exp2_org: "FRC 6907 战队",
-      exp2_desc: "作为战队成员，参与机器人机械设计、电子布线、样机制作与比赛，积累了集成化机器人系统与团队协作的实战经验。",
-      proj_title: "精选项目", proj_subtitle: "部分机器人系统设计作品",
-      proj1_title: "FRC 竞赛机器人",
-      proj1_desc: "主导 FRC 竞赛机器人的端到端系统设计，整合机械结构、底盘传动、执行器与控制系统，可靠地完成比赛任务。",
-      proj2_title: "自主移动机器人",
-      proj2_desc: "设计了一款紧凑型自主移动机器人，采用麦克纳姆轮底盘，集成电机控制、传感器反馈与嵌入式控制逻辑，实现稳定导航。",
-      proj3_title: "机械臂原型",
-      proj3_desc: "开发多自由度机械臂原型，涵盖机构设计、舵机控制与运动学校准，实现末端执行器的精确定位。",
-      contact_title: "联系我", contact_subtitle: "欢迎就合作或工作机会与我联系",
-      contact_email: "邮箱", contact_linkedin: "领英", contact_github: "GitHub", contact_loc: "所在地",
-      footer_rights: "保留所有权利。"
+      hero_role_pre: "独立开发者 ·",
+      hero_role_accent: "公开构建",
+      hero_tag: "我独立设计、上线并增长小型软件产品。从想法到首个付费用户只用几天而非几个月——并一路公开分享数据、教训与技术栈。",
+      hero_btn_products: "看看我的产品",
+      hero_btn_nl: "订阅周报",
+      stat_products: "已上线产品",
+      stat_mrr: "月经常性收入", stat_years: "独立构建", stat_users: "活跃用户",
+      now_title: "动态",
+      now_h: "正在做 DevNotes v2 + 每周写作",
+      now_p: "目前全力推进 DevNotes v2 重写——更快的编辑器、AI 行内摘要、跨设备同步。同时每周五发布一篇短文，记录那一周上线过程中学到的东西。",
+      prod_title: "产品", prod_meta: "独立上线并维护",
+      p1_desc: "面向开发者的 Markdown 笔记应用。快速、离线优先，支持 AI 行内摘要与 git 风格的版本历史。",
+      p2_desc: "Next.js + Stripe + 鉴权脚手架，让独立开发者在一个周末而非一个月内上线一个 SaaS。",
+      p3_desc: "为 maker 打造的极简键盘驱动待办应用。一个快捷键记录，一个快捷键上线。免费，附 $19 一次性专业版。",
+      p4_desc: "TypeScript 优先的 monorepo 起手模板，用于构建多产品独立应用：共享鉴权、计费、分析与设计系统。",
+      p5_desc: "浏览器端像素画编辑器，支持调色板约束、动画时间线与一键导出精灵图。",
+      p6_desc: "异步播客：录制短语音，听众按自己节奏回复。正在搭建候补名单——已有 320+ maker 加入。",
+      stack_title: "技术栈", stack_meta: "日常使用的工具",
+      stack_fe: "前端", stack_be: "后端", stack_ship: "上线与计费", stack_ops: "运营",
+      write_title: "文章", write_meta: "每周一篇上线随笔",
+      w1: "我如何在 12 个月内上线 6 个产品而不内耗",
+      w2: "帮我拿到前 1000 用户的 $0 营销栈",
+      w3: "我为什么放弃了 Redux，且再没回头",
+      w4: "给你的独立 SaaS 定价：一个简单框架",
+      w5: "DevNotes 从 0 到 $3k MRR 全程时间线",
+      nl_title: "每周五，一篇短文。",
+      nl_desc: "不灌水。每周一篇：那一周上线学到的某件事、背后的数据、写的代码。已有 2,100+ 独立开发者订阅。",
+      nl_btn: "订阅",
+      nl_count_pre: "2,141 位订阅者 ·",
+      nl_count_post: "一键退订",
+      st_launched: "已上线", st_building: "构建中", st_pre: "候补中",
+      footer_built: "独立构建与上线"
     }
   };
 
@@ -515,7 +759,7 @@
     document.querySelectorAll('.lang-btn').forEach(b => {
       b.classList.toggle('active', b.dataset.lang === lang);
     });
-    document.title = lang === 'zh' ? 'Sylvester | 机械电子工程师' : 'Sylvester | Mechatronics Engineer';
+    document.title = lang === 'zh' ? 'Sylvester | 独立开发者' : 'Sylvester | Indie Developer';
     try { localStorage.setItem('site_lang', lang); } catch (e) {}
   }
 
@@ -523,7 +767,6 @@
     btn.addEventListener('click', () => setLang(btn.dataset.lang));
   });
 
-  // init
   let saved = null;
   try { saved = localStorage.getItem('site_lang'); } catch (e) {}
   const browser = (navigator.language || navigator.userLanguage || '').toLowerCase();
@@ -531,6 +774,11 @@
   setLang(init);
 
   document.getElementById('year').textContent = new Date().getFullYear();
+  // "Now" date label
+  const d = new Date();
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  document.getElementById('now-date').textContent =
+    `${months[d.getMonth()]} ${d.getFullYear()}`;
 </script>
 
 </body>
