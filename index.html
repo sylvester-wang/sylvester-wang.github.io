@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Sylvester | Indie Developer</title>
+<title>Sylvester — Indie Developer</title>
 <meta name="description" content="Sylvester — indie developer building & shipping profitable products in public." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,12 +19,9 @@
     --muted: #8a8a94;
     --muted-2: #5a5a64;
     --accent: #ff6b35;
-    --accent-soft: rgba(255, 107, 53, 0.12);
     --green: #4ade80;
     --yellow: #facc15;
     --red: #f87171;
-    --radius: 14px;
-    --radius-sm: 8px;
     --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
     --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
       "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
@@ -42,60 +39,20 @@
   a { color: inherit; text-decoration: none; }
   ::selection { background: var(--accent); color: #fff; }
 
-  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
-
-  /* Nav */
-  header.nav {
-    position: sticky; top: 0; z-index: 50;
-    background: rgba(10,10,10,0.72);
-    backdrop-filter: saturate(180%) blur(14px);
-    border-bottom: 1px solid var(--border-soft);
-  }
-  .nav-inner {
-    max-width: 880px; margin: 0 auto; padding: 14px 24px;
-    display: flex; align-items: center; justify-content: space-between;
-  }
-  .logo {
-    font-weight: 800; letter-spacing: -0.3px; font-size: 1rem;
-    color: var(--text); display: flex; align-items: center; gap: 8px;
-  }
-  .logo-dot {
-    width: 8px; height: 8px; border-radius: 50%;
-    background: var(--accent); display: inline-block;
-    box-shadow: 0 0 12px var(--accent);
-  }
-  .nav-links { display: flex; gap: 22px; align-items: center; }
-  .nav-links a {
-    font-size: 0.86rem; color: var(--muted); font-weight: 500;
-    transition: color .15s;
-  }
-  .nav-links a:hover { color: var(--text); }
-  .lang-switch {
-    display: flex; gap: 2px; padding: 3px;
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: 999px;
-  }
-  .lang-btn {
-    border: none; background: transparent; cursor: pointer;
-    padding: 3px 10px; border-radius: 999px; font-size: 0.74rem;
-    color: var(--muted); font-weight: 600; transition: all .15s;
-    font-family: var(--mono);
-  }
-  .lang-btn.active { background: var(--accent); color: #0a0a0a; }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 0 24px; }
 
   /* Hero */
-  .hero { padding: 100px 24px 60px; text-align: center; }
-  .hero .wrap { display: flex; flex-direction: column; align-items: center; }
+  .hero { padding: 120px 24px 80px; text-align: center; }
   .avatar {
-    width: 84px; height: 84px; border-radius: 50%;
+    width: 72px; height: 72px; border-radius: 50%;
     background: linear-gradient(135deg, var(--accent), #ff9466);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 2rem; font-weight: 800; color: #0a0a0a;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 1.7rem; font-weight: 800; color: #0a0a0a;
     margin-bottom: 24px; box-shadow: 0 8px 32px rgba(255,107,53,0.35);
   }
   .hero h1 {
-    font-size: 2.6rem; font-weight: 800; letter-spacing: -0.03em;
-    line-height: 1.1; margin-bottom: 12px;
+    font-size: 2.1rem; font-weight: 800; letter-spacing: -0.03em;
+    line-height: 1.15; margin-bottom: 14px;
   }
   .hero h1 .wave { display: inline-block; transform-origin: 70% 70%; animation: wave 2.4s ease-in-out infinite; }
   @keyframes wave {
@@ -106,20 +63,16 @@
     40% { transform: rotate(-4deg); }
     50% { transform: rotate(10deg); }
   }
-  .hero .role {
-    color: var(--muted); font-size: 1.05rem; margin-bottom: 18px;
-    font-family: var(--mono);
-  }
-  .hero .role .accent { color: var(--accent); }
-  .hero p.tagline {
-    max-width: 580px; color: var(--muted); font-size: 1rem;
+  .hero .tagline {
+    color: var(--muted); font-size: 1rem; max-width: 460px;
     margin: 0 auto 28px;
   }
+  .hero .tagline .accent { color: var(--accent); }
   .hero-buttons { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
   .btn {
     display: inline-flex; align-items: center; gap: 8px;
-    padding: 10px 18px; border-radius: var(--radius-sm);
-    font-weight: 600; font-size: 0.88rem; transition: all .15s; cursor: pointer;
+    padding: 10px 18px; border-radius: 8px;
+    font-weight: 600; font-size: 0.86rem; transition: all .15s; cursor: pointer;
     border: 1px solid transparent;
   }
   .btn-primary { background: var(--accent); color: #0a0a0a; }
@@ -130,655 +83,216 @@
   }
   .btn-ghost:hover { border-color: var(--muted-2); background: var(--surface-2); }
 
-  /* Stats */
-  .stats {
-    border-top: 1px solid var(--border-soft);
-    border-bottom: 1px solid var(--border-soft);
-    padding: 24px;
-  }
-  .stats .wrap {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
-  }
-  .stat { text-align: center; }
-  .stat .num {
-    font-size: 1.7rem; font-weight: 800; color: var(--text);
-    letter-spacing: -0.02em; line-height: 1;
-    font-family: var(--mono);
-  }
-  .stat .num .unit { font-size: 1rem; color: var(--muted); margin-left: 2px; }
-  .stat .label {
-    font-size: 0.76rem; color: var(--muted); margin-top: 6px;
-    text-transform: uppercase; letter-spacing: 0.08em;
-  }
-
-  /* Sections */
-  section.block { padding: 64px 24px; }
-  .block-head {
-    display: flex; align-items: baseline; justify-content: space-between;
-    margin-bottom: 28px; gap: 16px; flex-wrap: wrap;
-  }
+  /* Products */
+  .products { padding: 0 0 80px; }
   .block-title {
-    font-size: 1.15rem; font-weight: 700; letter-spacing: -0.01em;
+    font-size: 0.82rem; font-weight: 600; color: var(--muted);
+    font-family: var(--mono); margin-bottom: 28px;
+    text-transform: uppercase; letter-spacing: 0.08em;
     display: flex; align-items: center; gap: 10px;
   }
-  .block-title .marker {
-    font-family: var(--mono); color: var(--accent); font-size: 0.9rem;
-  }
-  .block-meta {
-    font-family: var(--mono); font-size: 0.78rem; color: var(--muted-2);
-  }
-
-  /* Now section */
-  .now-card {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 24px;
-    display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start;
-  }
-  .now-pulse {
-    width: 10px; height: 10px; border-radius: 50%; background: var(--green);
-    margin-top: 8px; position: relative;
-  }
-  .now-pulse::after {
-    content: ''; position: absolute; inset: -4px; border-radius: 50%;
-    border: 1px solid var(--green); opacity: 0.6;
-    animation: pulse 1.8s ease-out infinite;
-  }
-  @keyframes pulse {
-    0% { transform: scale(0.8); opacity: 0.8; }
-    100% { transform: scale(2.4); opacity: 0; }
-  }
-  .now-body h3 {
-    font-size: 1rem; font-weight: 700; margin-bottom: 6px;
-  }
-  .now-body p { color: var(--muted); font-size: 0.92rem; }
-  .now-body .now-tags {
-    display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap;
-  }
-
-  /* Products grid */
-  .products {
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;
+  .block-title::after {
+    content: ''; flex: 1; height: 1px; background: var(--border);
   }
   .product {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 20px;
-    transition: border-color .15s, transform .15s, background .15s;
-    display: flex; flex-direction: column; gap: 12px;
-    position: relative; overflow: hidden;
+    display: flex; align-items: center; gap: 16px;
+    padding: 18px 0; border-bottom: 1px solid var(--border-soft);
+    transition: padding .15s;
   }
-  .product:hover {
-    border-color: var(--muted-2); transform: translateY(-2px);
-    background: var(--surface-2);
-  }
-  .product-head {
-    display: flex; align-items: center; gap: 12px;
-  }
+  .product:hover { padding-left: 10px; }
   .product-icon {
-    width: 38px; height: 38px; border-radius: 9px;
+    width: 36px; height: 36px; border-radius: 8px;
     display: flex; align-items: center; justify-content: center;
-    font-size: 1.1rem; font-weight: 800; color: #0a0a0a;
+    font-size: 1rem; font-weight: 800; color: #0a0a0a;
     flex-shrink: 0;
   }
+  .product-main { flex: 1; min-width: 0; }
   .product-name {
-    font-weight: 700; font-size: 1rem; letter-spacing: -0.01em;
-    flex: 1; min-width: 0;
+    font-weight: 600; font-size: 0.98rem; letter-spacing: -0.01em;
+    display: flex; align-items: center; gap: 8px; margin-bottom: 3px;
   }
   .product-status {
-    font-size: 0.7rem; font-weight: 600; padding: 3px 8px;
+    font-size: 0.64rem; font-weight: 600; padding: 2px 7px;
     border-radius: 999px; font-family: var(--mono);
     text-transform: uppercase; letter-spacing: 0.05em;
-    flex-shrink: 0;
   }
   .status-launched { background: rgba(74,222,128,0.12); color: var(--green); }
   .status-building { background: rgba(250,204,21,0.12); color: var(--yellow); }
   .status-pre { background: rgba(138,138,148,0.12); color: var(--muted); }
-  .status-acquired { background: rgba(248,113,113,0.12); color: var(--red); }
-
-  .product-desc { color: var(--muted); font-size: 0.88rem; flex: 1; }
-  .product-foot {
-    display: flex; align-items: center; justify-content: space-between;
-    gap: 12px; padding-top: 12px;
-    border-top: 1px dashed var(--border);
-  }
+  .product-desc { color: var(--muted); font-size: 0.84rem; }
   .product-rev {
-    font-family: var(--mono); font-size: 0.82rem; color: var(--text);
-    font-weight: 600;
-  }
-  .product-rev .rev-label { color: var(--muted-2); margin-right: 4px; }
-  .product-link {
-    font-size: 0.78rem; color: var(--muted); font-family: var(--mono);
-    display: inline-flex; align-items: center; gap: 4px;
-    transition: color .15s;
-  }
-  .product:hover .product-link { color: var(--accent); }
-  .product-tags { display: flex; gap: 6px; flex-wrap: wrap; }
-  .tag {
-    background: var(--surface-2); color: var(--muted);
-    padding: 3px 8px; border-radius: 5px; font-size: 0.72rem;
-    font-family: var(--mono); border: 1px solid var(--border);
-  }
-
-  /* Stack */
-  .stack-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 14px;
-  }
-  .stack-card {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 18px;
-  }
-  .stack-card h4 {
-    font-size: 0.78rem; color: var(--muted); margin-bottom: 12px;
-    text-transform: uppercase; letter-spacing: 0.08em;
-    font-family: var(--mono);
-  }
-  .stack-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-  .stack-tags .tag {
-    background: transparent; color: var(--text);
-    border: 1px solid var(--border);
-  }
-
-  /* Writing */
-  .writing-list { display: flex; flex-direction: column; gap: 2px; }
-  .writing-item {
-    display: flex; align-items: baseline; justify-content: space-between;
-    gap: 16px; padding: 14px 4px;
-    border-bottom: 1px solid var(--border-soft);
-    transition: padding .15s;
-  }
-  .writing-item:hover { padding-left: 10px; }
-  .writing-item:last-child { border-bottom: none; }
-  .writing-title { font-size: 0.94rem; font-weight: 500; }
-  .writing-date {
     font-family: var(--mono); font-size: 0.78rem; color: var(--muted-2);
     flex-shrink: 0;
   }
 
   /* Newsletter */
   .newsletter {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 36px 28px;
-    text-align: center;
+    padding: 0 0 80px;
   }
-  .newsletter h3 {
-    font-size: 1.3rem; font-weight: 700; letter-spacing: -0.02em;
-    margin-bottom: 8px;
+  .nl-title {
+    font-size: 1.2rem; font-weight: 700; letter-spacing: -0.02em;
+    margin-bottom: 6px;
   }
-  .newsletter p {
+  .nl-desc {
     color: var(--muted); font-size: 0.92rem; margin-bottom: 22px;
-    max-width: 460px; margin-left: auto; margin-right: auto;
+    max-width: 420px;
   }
   .nl-form {
-    display: flex; gap: 8px; max-width: 380px; margin: 0 auto;
+    display: flex; gap: 8px; max-width: 360px;
   }
   .nl-input {
-    flex: 1; background: var(--bg); border: 1px solid var(--border);
-    border-radius: var(--radius-sm); padding: 11px 14px;
-    color: var(--text); font-size: 0.9rem; font-family: var(--sans);
+    flex: 1; background: var(--surface); border: 1px solid var(--border);
+    border-radius: 8px; padding: 10px 14px;
+    color: var(--text); font-size: 0.88rem; font-family: var(--sans);
     transition: border-color .15s;
   }
   .nl-input:focus { outline: none; border-color: var(--accent); }
   .nl-input::placeholder { color: var(--muted-2); }
   .nl-count {
-    font-family: var(--mono); font-size: 0.76rem; color: var(--muted-2);
-    margin-top: 14px;
+    font-family: var(--mono); font-size: 0.74rem; color: var(--muted-2);
+    margin-top: 12px;
+  }
+  .nl-msg {
+    margin-top: 10px; font-family: var(--mono);
+    font-size: 0.76rem; color: var(--green);
   }
 
-  /* Contact / Footer */
+  /* Footer */
   footer {
     border-top: 1px solid var(--border-soft);
-    padding: 36px 24px;
+    padding: 32px 24px;
   }
   .footer-inner {
-    max-width: 880px; margin: 0 auto;
+    max-width: 640px; margin: 0 auto;
     display: flex; align-items: center; justify-content: space-between;
     gap: 16px; flex-wrap: wrap;
   }
   .socials { display: flex; gap: 18px; align-items: center; }
   .social {
-    font-size: 0.84rem; color: var(--muted); font-family: var(--mono);
-    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 0.8rem; color: var(--muted); font-family: var(--mono);
     transition: color .15s;
   }
   .social:hover { color: var(--text); }
   .copyright {
-    font-size: 0.8rem; color: var(--muted-2); font-family: var(--mono);
+    font-size: 0.76rem; color: var(--muted-2); font-family: var(--mono);
   }
 
-  @media (max-width: 720px) {
-    .hero { padding: 70px 20px 40px; }
-    .hero h1 { font-size: 2rem; }
-    .stats .wrap { grid-template-columns: repeat(2, 1fr); gap: 22px 16px; }
-    .products { grid-template-columns: 1fr; }
-    .nav-links a:not(.lang-switch *) { display: none; }
+  @media (max-width: 560px) {
+    .hero { padding: 80px 20px 60px; }
+    .hero h1 { font-size: 1.7rem; }
     .nl-form { flex-direction: column; }
-    .now-card { grid-template-columns: 1fr; }
-    .now-pulse { margin-top: 0; }
+    .product-rev { display: none; }
   }
 </style>
 </head>
 <body>
 
-<header class="nav">
-  <div class="nav-inner">
-    <a href="#" class="logo"><span class="logo-dot"></span>Sylvester</a>
-    <nav class="nav-links">
-      <a href="#now" data-i18n="nav_now">Now</a>
-      <a href="#products" data-i18n="nav_products">Products</a>
-      <a href="#stack" data-i18n="nav_stack">Stack</a>
-      <a href="#writing" data-i18n="nav_writing">Writing</a>
-      <div class="lang-switch">
-        <button class="lang-btn active" data-lang="en">EN</button>
-        <button class="lang-btn" data-lang="zh">中</button>
-      </div>
-    </nav>
-  </div>
-</header>
+<main class="wrap">
 
-<!-- Hero -->
-<section class="hero">
-  <div class="wrap">
+  <!-- Hero -->
+  <section class="hero">
     <div class="avatar">S</div>
-    <h1><span class="wave">👋</span> <span data-i18n="hero_name">Hey, I'm Sylvester</span></h1>
-    <div class="role"><span data-i18n="hero_role_pre">Indie developer ·</span> <span class="accent" data-i18n="hero_role_accent">building in public</span></div>
-    <p class="tagline" data-i18n="hero_tag">
-      I design, ship and grow small software products on my own. From idea to first paying
-      customer in days, not months — sharing numbers, lessons and stack along the way.
+    <h1><span class="wave">👋</span> Hey, I'm Sylvester</h1>
+    <p class="tagline">
+      Indie developer <span class="accent">building in public</span> — shipping
+      small software products on my own, from idea to first paying customer.
     </p>
     <div class="hero-buttons">
-      <a href="#products" class="btn btn-primary" data-i18n="hero_btn_products">See my products</a>
-      <a href="#newsletter" class="btn btn-ghost" data-i18n="hero_btn_nl">Join the newsletter</a>
+      <a href="#products" class="btn btn-primary">See my products</a>
+      <a href="#newsletter" class="btn btn-ghost">Newsletter</a>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Stats -->
-<section class="stats">
-  <div class="wrap">
-    <div class="stat">
-      <div class="num">12</div>
-      <div class="label" data-i18n="stat_products">Products shipped</div>
-    </div>
-    <div class="stat">
-      <div class="num">$8.4<span class="unit">k</span></div>
-      <div class="label" data-i18n="stat_mrr">MRR</div>
-    </div>
-    <div class="stat">
-      <div class="num">3<span class="unit">yrs</span></div>
-      <div class="label" data-i18n="stat_years">Building solo</div>
-    </div>
-    <div class="stat">
-      <div class="num">48<span class="unit">k</span></div>
-      <div class="label" data-i18n="stat_users">Active users</div>
-    </div>
-  </div>
-</section>
+  <!-- Products -->
+  <section id="products" class="products">
+    <h2 class="block-title">Products</h2>
 
-<!-- Now -->
-<section id="now" class="block">
-  <div class="wrap">
-    <div class="block-head">
-      <h2 class="block-title"><span class="marker">/01</span><span data-i18n="now_title">Now</span></h2>
-      <span class="block-meta" id="now-date"></span>
-    </div>
-    <div class="now-card">
-      <div class="now-pulse"></div>
-      <div class="now-body">
-        <h3 data-i18n="now_h">Shipping DevNotes v2 + writing weekly</h3>
-        <p data-i18n="now_p">
-          Currently heads-down on the v2 rewrite of DevNotes — faster editor, AI inline
-          summaries, sync across devices. Also publishing a short essay every Friday
-          about what I learned shipping that week.
-        </p>
-        <div class="now-tags">
-          <span class="tag">Next.js</span>
-          <span class="tag">tRPC</span>
-          <span class="tag">Postgres</span>
-          <span class="tag">Stripe</span>
-        </div>
+    <a class="product" href="#" target="_blank" rel="noopener">
+      <div class="product-icon" style="background:#ff6b35;">D</div>
+      <div class="product-main">
+        <div class="product-name">DevNotes <span class="product-status status-launched">Launched</span></div>
+        <div class="product-desc">Markdown notes for developers. Offline-first, AI summaries.</div>
       </div>
-    </div>
-  </div>
-</section>
+      <div class="product-rev">$3.2k MRR</div>
+    </a>
 
-<!-- Products -->
-<section id="products" class="block" style="background:var(--bg);">
-  <div class="wrap">
-    <div class="block-head">
-      <h2 class="block-title"><span class="marker">/02</span><span data-i18n="prod_title">Products</span></h2>
-      <span class="block-meta" data-i18n="prod_meta">shipped &amp; maintained solo</span>
-    </div>
-    <div class="products">
-
-      <a class="product" href="#" target="_blank" rel="noopener">
-        <div class="product-head">
-          <div class="product-icon" style="background:#ff6b35;">D</div>
-          <div class="product-name">DevNotes</div>
-          <span class="product-status status-launched" data-i18n="st_launched">Launched</span>
-        </div>
-        <div class="product-desc" data-i18n="p1_desc">
-          Markdown notes app for developers. Fast, offline-first, with AI inline
-          summaries and git-style version history.
-        </div>
-        <div class="product-tags">
-          <span class="tag">Next.js</span><span class="tag">SQLite</span><span class="tag">OpenAI</span>
-        </div>
-        <div class="product-foot">
-          <div class="product-rev"><span class="rev-label">MRR</span>$3.2k</div>
-          <span class="product-link">devnotes.app →</span>
-        </div>
-      </a>
-
-      <a class="product" href="#" target="_blank" rel="noopener">
-        <div class="product-head">
-          <div class="product-icon" style="background:#4ade80;">S</div>
-          <div class="product-name">ShipFast</div>
-          <span class="product-status status-launched" data-i18n="st_launched">Launched</span>
-        </div>
-        <div class="product-desc" data-i18n="p2_desc">
-          Next.js + Stripe + auth boilerplate that lets indie hackers launch a SaaS
-          in a weekend instead of a month.
-        </div>
-        <div class="product-tags">
-          <span class="tag">Next.js</span><span class="tag">Stripe</span><span class="tag">Prisma</span>
-        </div>
-        <div class="product-foot">
-          <div class="product-rev"><span class="rev-label">MRR</span>$4.1k</div>
-          <span class="product-link">shipfast.dev →</span>
-        </div>
-      </a>
-
-      <a class="product" href="#" target="_blank" rel="noopener">
-        <div class="product-head">
-          <div class="product-icon" style="background:#facc15;">T</div>
-          <div class="product-name">TaskFlow</div>
-          <span class="product-status status-launched" data-i18n="st_launched">Launched</span>
-        </div>
-        <div class="product-desc" data-i18n="p3_desc">
-          Minimalist keyboard-driven todo app for makers. One shortcut to capture,
-          one to ship. Free, with a $19 one-time pro tier.
-        </div>
-        <div class="product-tags">
-          <span class="tag">React</span><span class="tag">Tauri</span><span class="tag">Rust</span>
-        </div>
-        <div class="product-foot">
-          <div class="product-rev"><span class="rev-label">Users</span>12k</div>
-          <span class="product-link">taskflow.app →</span>
-        </div>
-      </a>
-
-      <a class="product" href="#" target="_blank" rel="noopener">
-        <div class="product-head">
-          <div class="product-icon" style="background:#60a5fa;">I</div>
-          <div class="product-name">IndieKit</div>
-          <span class="product-status status-launched" data-i18n="st_launched">Launched</span>
-        </div>
-        <div class="product-desc" data-i18n="p4_desc">
-          TypeScript-first monorepo starter for shipping multi-product indie apps:
-          shared auth, billing, analytics and design system.
-        </div>
-        <div class="product-tags">
-          <span class="tag">Turborepo</span><span class="tag">TypeScript</span><span class="tag">tRPC</span>
-        </div>
-        <div class="product-foot">
-          <div class="product-rev"><span class="rev-label">MRR</span>$1.1k</div>
-          <span class="product-link">indiekit.dev →</span>
-        </div>
-      </a>
-
-      <a class="product" href="#" target="_blank" rel="noopener">
-        <div class="product-head">
-          <div class="product-icon" style="background:#a78bfa;">P</div>
-          <div class="product-name">PixelCraft</div>
-          <span class="product-status status-building" data-i18n="st_building">Building</span>
-        </div>
-        <div class="product-desc" data-i18n="p5_desc">
-          Browser-based pixel-art editor with palette constraints, animation timeline
-          and one-click export to spritesheets.
-        </div>
-        <div class="product-tags">
-          <span class="tag">Vue</span><span class="tag">Canvas</span><span class="tag">WebGL</span>
-        </div>
-        <div class="product-foot">
-          <div class="product-rev"><span class="rev-label">Status</span>beta</div>
-          <span class="product-link">pixelcraft.app →</span>
-        </div>
-      </a>
-
-      <a class="product" href="#" target="_blank" rel="noopener">
-        <div class="product-head">
-          <div class="product-icon" style="background:#f472b6;">A</div>
-          <div class="product-name">Asyncast</div>
-          <span class="product-status status-pre" data-i18n="st_pre">Pre-launch</span>
-        </div>
-        <div class="product-desc" data-i18n="p6_desc">
-          Async podcasting: record short voice notes, listeners reply on their own
-          time. Building the waitlist now — 320+ makers signed up.
-        </div>
-        <div class="product-tags">
-          <span class="tag">Next.js</span><span class="tag">FFmpeg</span><span class="tag">S3</span>
-        </div>
-        <div class="product-foot">
-          <div class="product-rev"><span class="rev-label">Waitlist</span>320</div>
-          <span class="product-link">asyncast.fm →</span>
-        </div>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<!-- Stack -->
-<section id="stack" class="block">
-  <div class="wrap">
-    <div class="block-head">
-      <h2 class="block-title"><span class="marker">/03</span><span data-i18n="stack_title">Stack</span></h2>
-      <span class="block-meta" data-i18n="stack_meta">tools I reach for daily</span>
-    </div>
-    <div class="stack-grid">
-      <div class="stack-card">
-        <h4 data-i18n="stack_fe">Frontend</h4>
-        <div class="stack-tags">
-          <span class="tag">Next.js</span><span class="tag">React</span>
-          <span class="tag">Tailwind</span><span class="tag">Astro</span>
-        </div>
+    <a class="product" href="#" target="_blank" rel="noopener">
+      <div class="product-icon" style="background:#4ade80;">S</div>
+      <div class="product-main">
+        <div class="product-name">ShipFast <span class="product-status status-launched">Launched</span></div>
+        <div class="product-desc">Next.js + Stripe + auth boilerplate. Ship SaaS in a weekend.</div>
       </div>
-      <div class="stack-card">
-        <h4 data-i18n="stack_be">Backend</h4>
-        <div class="stack-tags">
-          <span class="tag">Node</span><span class="tag">tRPC</span>
-          <span class="tag">Postgres</span><span class="tag">Redis</span>
-        </div>
-      </div>
-      <div class="stack-card">
-        <h4 data-i18n="stack_ship">Ship &amp; bill</h4>
-        <div class="stack-tags">
-          <span class="tag">Stripe</span><span class="tag">Resend</span>
-          <span class="tag">Vercel</span><span class="tag">Cloudflare</span>
-        </div>
-      </div>
-      <div class="stack-card">
-        <h4 data-i18n="stack_ops">Ops</h4>
-        <div class="stack-tags">
-          <span class="tag">Plausible</span><span class="tag">Linear</span>
-          <span class="tag">GitHub</span><span class="tag">Notion</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      <div class="product-rev">$4.1k MRR</div>
+    </a>
 
-<!-- Writing -->
-<section id="writing" class="block" style="background:var(--bg);">
-  <div class="wrap">
-    <div class="block-head">
-      <h2 class="block-title"><span class="marker">/04</span><span data-i18n="write_title">Writing</span></h2>
-      <span class="block-meta" data-i18n="write_meta">shipping essays, weekly</span>
-    </div>
-    <div class="writing-list">
-      <a class="writing-item" href="#">
-        <span class="writing-title" data-i18n="w1">How I shipped 6 products in 12 months without burning out</span>
-        <span class="writing-date">2026-09-05</span>
-      </a>
-      <a class="writing-item" href="#">
-        <span class="writing-title" data-i18n="w2">The $0 marketing stack that got me my first 1,000 users</span>
-        <span class="writing-date">2026-08-29</span>
-      </a>
-      <a class="writing-item" href="#">
-        <span class="writing-title" data-i18n="w3">Why I stopped using Redux and never looked back</span>
-        <span class="writing-date">2026-08-22</span>
-      </a>
-      <a class="writing-item" href="#">
-        <span class="writing-title" data-i18n="w4">Pricing your indie SaaS: a simple framework</span>
-        <span class="writing-date">2026-08-15</span>
-      </a>
-      <a class="writing-item" href="#">
-        <span class="writing-title" data-i18n="w5">From 0 to $3k MRR on DevNotes — full timeline</span>
-        <span class="writing-date">2026-08-08</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- Newsletter -->
-<section id="newsletter" class="block">
-  <div class="wrap">
-    <div class="newsletter">
-      <h3 data-i18n="nl_title">One short essay, every Friday.</h3>
-      <p data-i18n="nl_desc">
-        No fluff. One thing I learned shipping that week, the numbers behind it,
-        and the code I wrote. Read by 2,100+ indie makers.
-      </p>
-      <form class="nl-form" onsubmit="event.preventDefault(); this.querySelector('.nl-msg').textContent = '✓ subscribed';">
-        <input class="nl-input" type="email" placeholder="you@example.com" required />
-        <button class="btn btn-primary" type="submit" data-i18n="nl_btn">Subscribe</button>
-      </form>
-      <div class="nl-count">
-        <span data-i18n="nl_count_pre">2,141 subscribers ·</span>
-        <span data-i18n="nl_count_post">unsubscribe in one click</span>
+    <a class="product" href="#" target="_blank" rel="noopener">
+      <div class="product-icon" style="background:#facc15;">T</div>
+      <div class="product-main">
+        <div class="product-name">TaskFlow <span class="product-status status-launched">Launched</span></div>
+        <div class="product-desc">Keyboard-driven todo app for makers. One-key capture, one-key ship.</div>
       </div>
-      <div class="nl-msg" style="margin-top:10px;font-family:var(--mono);font-size:0.78rem;color:var(--green);"></div>
-    </div>
-  </div>
-</section>
+      <div class="product-rev">12k users</div>
+    </a>
+
+    <a class="product" href="#" target="_blank" rel="noopener">
+      <div class="product-icon" style="background:#60a5fa;">I</div>
+      <div class="product-main">
+        <div class="product-name">IndieKit <span class="product-status status-launched">Launched</span></div>
+        <div class="product-desc">TypeScript monorepo starter for multi-product indie apps.</div>
+      </div>
+      <div class="product-rev">$1.1k MRR</div>
+    </a>
+
+    <a class="product" href="#" target="_blank" rel="noopener">
+      <div class="product-icon" style="background:#a78bfa;">P</div>
+      <div class="product-main">
+        <div class="product-name">PixelCraft <span class="product-status status-building">Building</span></div>
+        <div class="product-desc">Browser pixel-art editor. Animation timeline, spritesheet export.</div>
+      </div>
+      <div class="product-rev">beta</div>
+    </a>
+
+    <a class="product" href="#" target="_blank" rel="noopener">
+      <div class="product-icon" style="background:#f472b6;">A</div>
+      <div class="product-main">
+        <div class="product-name">Asyncast <span class="product-status status-pre">Pre-launch</span></div>
+        <div class="product-desc">Async podcasting. Record voice notes, listeners reply on their time.</div>
+      </div>
+      <div class="product-rev">320 waitlist</div>
+    </a>
+  </section>
+
+  <!-- Newsletter -->
+  <section id="newsletter" class="newsletter">
+    <h2 class="block-title">Newsletter</h2>
+    <div class="nl-title">One short essay, every Friday.</div>
+    <p class="nl-desc">
+      No fluff. One thing I learned shipping that week, the numbers behind it,
+      and the code I wrote.
+    </p>
+    <form class="nl-form" onsubmit="event.preventDefault(); document.getElementById('nl-msg').textContent = '✓ subscribed';">
+      <input class="nl-input" type="email" placeholder="you@example.com" required />
+      <button class="btn btn-primary" type="submit">Subscribe</button>
+    </form>
+    <div class="nl-count">2,141 subscribers · unsubscribe in one click</div>
+    <div class="nl-msg" id="nl-msg"></div>
+  </section>
+
+</main>
 
 <footer>
   <div class="footer-inner">
-    <div class="copyright">© <span id="year"></span> Sylvester · <span data-i18n="footer_built">built &amp; shipped solo</span></div>
+    <div class="copyright">© <span id="year"></span> Sylvester</div>
     <div class="socials">
-      <a class="social" href="https://twitter.com/sylvester" target="_blank" rel="noopener">𝕏 Twitter</a>
-      <a class="social" href="https://github.com/sylvester-wang" target="_blank" rel="noopener">◆ GitHub</a>
-      <a class="social" href="mailto:hi@sylvester.dev">✉ Email</a>
+      <a class="social" href="https://twitter.com/sylvester" target="_blank" rel="noopener">Twitter</a>
+      <a class="social" href="https://github.com/sylvester-wang" target="_blank" rel="noopener">GitHub</a>
+      <a class="social" href="mailto:hi@sylvester.dev">Email</a>
     </div>
   </div>
 </footer>
 
 <script>
-  const i18n = {
-    en: {
-      nav_now: "Now", nav_products: "Products", nav_stack: "Stack", nav_writing: "Writing",
-      hero_name: "Hey, I'm Sylvester",
-      hero_role_pre: "Indie developer ·",
-      hero_role_accent: "building in public",
-      hero_tag: "I design, ship and grow small software products on my own. From idea to first paying customer in days, not months — sharing numbers, lessons and stack along the way.",
-      hero_btn_products: "See my products",
-      hero_btn_nl: "Join the newsletter",
-      stat_products: "Products shipped",
-      stat_mrr: "MRR", stat_years: "Building solo", stat_users: "Active users",
-      now_title: "Now",
-      now_h: "Shipping DevNotes v2 + writing weekly",
-      now_p: "Currently heads-down on the v2 rewrite of DevNotes — faster editor, AI inline summaries, sync across devices. Also publishing a short essay every Friday about what I learned shipping that week.",
-      prod_title: "Products", prod_meta: "shipped & maintained solo",
-      p1_desc: "Markdown notes app for developers. Fast, offline-first, with AI inline summaries and git-style version history.",
-      p2_desc: "Next.js + Stripe + auth boilerplate that lets indie hackers launch a SaaS in a weekend instead of a month.",
-      p3_desc: "Minimalist keyboard-driven todo app for makers. One shortcut to capture, one to ship. Free, with a $19 one-time pro tier.",
-      p4_desc: "TypeScript-first monorepo starter for shipping multi-product indie apps: shared auth, billing, analytics and design system.",
-      p5_desc: "Browser-based pixel-art editor with palette constraints, animation timeline and one-click export to spritesheets.",
-      p6_desc: "Async podcasting: record short voice notes, listeners reply on their own time. Building the waitlist now — 320+ makers signed up.",
-      stack_title: "Stack", stack_meta: "tools I reach for daily",
-      stack_fe: "Frontend", stack_be: "Backend", stack_ship: "Ship & bill", stack_ops: "Ops",
-      write_title: "Writing", write_meta: "shipping essays, weekly",
-      w1: "How I shipped 6 products in 12 months without burning out",
-      w2: "The $0 marketing stack that got me my first 1,000 users",
-      w3: "Why I stopped using Redux and never looked back",
-      w4: "Pricing your indie SaaS: a simple framework",
-      w5: "From 0 to $3k MRR on DevNotes — full timeline",
-      nl_title: "One short essay, every Friday.",
-      nl_desc: "No fluff. One thing I learned shipping that week, the numbers behind it, and the code I wrote. Read by 2,100+ indie makers.",
-      nl_btn: "Subscribe",
-      nl_count_pre: "2,141 subscribers ·",
-      nl_count_post: "unsubscribe in one click",
-      st_launched: "Launched", st_building: "Building", st_pre: "Pre-launch",
-      footer_built: "built & shipped solo"
-    },
-    zh: {
-      nav_now: "动态", nav_products: "产品", nav_stack: "技术栈", nav_writing: "文章",
-      hero_name: "你好，我是 Sylvester",
-      hero_role_pre: "独立开发者 ·",
-      hero_role_accent: "公开构建",
-      hero_tag: "我独立设计、上线并增长小型软件产品。从想法到首个付费用户只用几天而非几个月——并一路公开分享数据、教训与技术栈。",
-      hero_btn_products: "看看我的产品",
-      hero_btn_nl: "订阅周报",
-      stat_products: "已上线产品",
-      stat_mrr: "月经常性收入", stat_years: "独立构建", stat_users: "活跃用户",
-      now_title: "动态",
-      now_h: "正在做 DevNotes v2 + 每周写作",
-      now_p: "目前全力推进 DevNotes v2 重写——更快的编辑器、AI 行内摘要、跨设备同步。同时每周五发布一篇短文，记录那一周上线过程中学到的东西。",
-      prod_title: "产品", prod_meta: "独立上线并维护",
-      p1_desc: "面向开发者的 Markdown 笔记应用。快速、离线优先，支持 AI 行内摘要与 git 风格的版本历史。",
-      p2_desc: "Next.js + Stripe + 鉴权脚手架，让独立开发者在一个周末而非一个月内上线一个 SaaS。",
-      p3_desc: "为 maker 打造的极简键盘驱动待办应用。一个快捷键记录，一个快捷键上线。免费，附 $19 一次性专业版。",
-      p4_desc: "TypeScript 优先的 monorepo 起手模板，用于构建多产品独立应用：共享鉴权、计费、分析与设计系统。",
-      p5_desc: "浏览器端像素画编辑器，支持调色板约束、动画时间线与一键导出精灵图。",
-      p6_desc: "异步播客：录制短语音，听众按自己节奏回复。正在搭建候补名单——已有 320+ maker 加入。",
-      stack_title: "技术栈", stack_meta: "日常使用的工具",
-      stack_fe: "前端", stack_be: "后端", stack_ship: "上线与计费", stack_ops: "运营",
-      write_title: "文章", write_meta: "每周一篇上线随笔",
-      w1: "我如何在 12 个月内上线 6 个产品而不内耗",
-      w2: "帮我拿到前 1000 用户的 $0 营销栈",
-      w3: "我为什么放弃了 Redux，且再没回头",
-      w4: "给你的独立 SaaS 定价：一个简单框架",
-      w5: "DevNotes 从 0 到 $3k MRR 全程时间线",
-      nl_title: "每周五，一篇短文。",
-      nl_desc: "不灌水。每周一篇：那一周上线学到的某件事、背后的数据、写的代码。已有 2,100+ 独立开发者订阅。",
-      nl_btn: "订阅",
-      nl_count_pre: "2,141 位订阅者 ·",
-      nl_count_post: "一键退订",
-      st_launched: "已上线", st_building: "构建中", st_pre: "候补中",
-      footer_built: "独立构建与上线"
-    }
-  };
-
-  function setLang(lang) {
-    if (!i18n[lang]) return;
-    document.documentElement.lang = lang;
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.getAttribute('data-i18n');
-      if (i18n[lang][key] !== undefined) el.textContent = i18n[lang][key];
-    });
-    document.querySelectorAll('.lang-btn').forEach(b => {
-      b.classList.toggle('active', b.dataset.lang === lang);
-    });
-    document.title = lang === 'zh' ? 'Sylvester | 独立开发者' : 'Sylvester | Indie Developer';
-    try { localStorage.setItem('site_lang', lang); } catch (e) {}
-  }
-
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', () => setLang(btn.dataset.lang));
-  });
-
-  let saved = null;
-  try { saved = localStorage.getItem('site_lang'); } catch (e) {}
-  const browser = (navigator.language || navigator.userLanguage || '').toLowerCase();
-  const init = saved || (browser.startsWith('zh') ? 'zh' : 'en');
-  setLang(init);
-
   document.getElementById('year').textContent = new Date().getFullYear();
-  // "Now" date label
-  const d = new Date();
-  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  document.getElementById('now-date').textContent =
-    `${months[d.getMonth()]} ${d.getFullYear()}`;
 </script>
 
 </body>
